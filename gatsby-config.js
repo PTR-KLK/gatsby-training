@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Simple Cat Site`,
+  },
   plugins: [
     `gatsby-plugin-emotion`,
     {
