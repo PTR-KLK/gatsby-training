@@ -32,6 +32,15 @@ export default function Layout({ children }) {
       >
         About
       </Link>
+      <Link
+        to={`/portfolio/`}
+        css={css`
+          float: right;
+          margin-right: ${rhythm(0.25)};
+        `}
+      >
+        Portfolio
+      </Link>
       {children}
     </div>
   )

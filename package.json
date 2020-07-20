@@ -22,6 +22,7 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-typography": "^2.5.10",
     "gatsby-source-filesystem": "^2.3.20",
+    "gatsby-source-github-api": "^0.2.1",
     "gatsby-transformer-remark": "^2.8.25",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
