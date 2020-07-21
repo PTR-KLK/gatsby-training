@@ -7,44 +7,42 @@ import Layout from "../components/layout"
 export default function Home({ data }) {
   return (
     <Layout>
-      <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >
-          Cat adventures
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
+      <h1
+        css={css`
+          display: inline-block;
+          border-bottom: 1px solid;
+        `}
+      >
+        Cat adventures
+      </h1>
+      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <section key={node.id}>
+          <Link
+            to={node.fields.slug}
+            css={css`
+              text-decoration: none;
+              color: inherit;
+            `}
+          >
+            <h3
               css={css`
-                text-decoration: none;
-                color: inherit;
+                margin-bottom: ${rhythm(1 / 4)};
               `}
             >
-              <h3
+              {node.frontmatter.title}{" "}
+              <span
                 css={css`
-                  margin-bottom: ${rhythm(1 / 4)};
+                  color: #4d4d4d;
                 `}
               >
-                {node.frontmatter.title}{" "}
-                <span
-                  css={css`
-                    color: #bbb;
-                  `}
-                >
-                  — {node.frontmatter.date}
-                </span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
+                — {node.frontmatter.date}
+              </span>
+            </h3>
+            <p>{node.excerpt}</p>
+          </Link>
+        </section>
+      ))}
     </Layout>
   )
 }

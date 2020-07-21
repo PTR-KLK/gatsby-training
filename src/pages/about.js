@@ -1,11 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
+import { css } from "@emotion/core"
 import { graphql } from "gatsby"
 
-export default function About({data}) {
+export default function About({ data }) {
   return (
     <Layout>
-      <h1>About {data.site.siteMetadata.title}</h1>
+      <h1
+        css={css`
+          display: inline-block;
+          border-bottom: 1px solid;
+        `}
+      >
+        About {data.site.siteMetadata.title}
+      </h1>
       <p>
         Cat ipsum dolor sit amet, your pillow is now my pet bed for ooooh
         feather moving feather! inspect anything brought into the house for why

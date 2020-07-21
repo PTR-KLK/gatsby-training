@@ -55,13 +55,12 @@ module.exports = {
         // GraphQLquery: defaults to a search query
         graphQLQuery: `query {
           user(login: "PTR-KLK") {
-            repositories(first: 4, orderBy: {field: STARGAZERS, direction: DESC} privacy: PUBLIC, isFork: false) {
+            repositories(first: 4, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               edges {
                 node {
                   name
                   description
                   url
-                  forkCount
                   stargazers {
                     totalCount
                   }
