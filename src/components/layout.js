@@ -13,34 +13,38 @@ export default function Layout({ children }) {
         padding-top: ${rhythm(1.5)};
       `}
     >
-      <Link to={`/`}>
-        <h3
-          css={css`
-            margin-bottom: ${rhythm(2)};
-            display: inline-block;
-            font-style: normal;
-          `}
-        >
-          Simple Cat Site
-        </h3>
-      </Link>
-      <Link
-        to={`/about/`}
-        css={css`
-          float: right;
-        `}
-      >
-        About
-      </Link>
-      <Link
-        to={`/portfolio/`}
-        css={css`
-          float: right;
-          margin-right: ${rhythm(0.25)};
-        `}
-      >
-        Portfolio
-      </Link>
+      <header>
+        <nav>
+          <Link to={`/`}>
+            <h3
+              css={css`
+                margin-bottom: ${rhythm(2)};
+                display: inline-block;
+                font-style: normal;
+              `}
+            >
+              Simple Cat Site
+            </h3>
+          </Link>
+          <Link
+            to={`/about/`}
+            css={css`
+              float: right;
+            `}
+          >
+            About
+          </Link>
+          <Link
+            to={`/portfolio/`}
+            css={css`
+              float: right;
+              margin-right: ${rhythm(0.25)};
+            `}
+          >
+            Portfolio
+          </Link>
+        </nav>
+      </header>
       <section>{children}</section>
     </main>
   )
