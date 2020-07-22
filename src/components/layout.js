@@ -1,47 +1,42 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { StaticQuery, Link, graphql } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
 
-function HeaderImg() {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          fileName: file(relativePath: { eq: "images/cat.png" }) {
-            childImageSharp {
-              fluid(maxWidth: 128, maxHeight: 152) {
-                ...GatsbyImageSharpFluid
-              }
+function Header() {
+  const { fileName } = useStaticQuery(
+    graphql`
+      query {
+        fileName: file(relativePath: { eq: "images/cat.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 128, maxHeight: 152) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-      `}
-      render={data => (
-        <Img
-          css={css`
-            height: 100%;
-          `}
-          imgStyle={{ objectFit: "contain" }}
-          fluid={data.fileName.childImageSharp.fluid}
-          alt="Fat cat"
-        />
-      )}
-    />
+      }
+    `
   )
-}
 
-function Header({ data }) {
   return (
     <>
       <figure
         css={css`
           max-height: 100%;
           height: 100px;
+          margin: 0;
         `}
       >
-        <HeaderImg />
+        <Img
+          css={css`
+            height: 100%;
+          `}
+          imgStyle={{ objectFit: "contain" }}
+          loading="eager"
+          fluid={fileName.childImageSharp.fluid}
+          alt="Fat cat"
+        />
       </figure>
       <nav>
         <Link to={`/`}>
