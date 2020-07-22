@@ -13,6 +13,9 @@ module.exports = {
     title: `Simple Cat Site`,
     description: `A simple description about cats doing things...`,
     author: `ptrklk`,
+    authorSite: `https://github.com/PTR-KLK`,
+    template: 'https://github.com/gatsbyjs/gatsby-starter-hello-world',
+    created: '2020',
   },
   plugins: [
     {
