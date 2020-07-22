@@ -3,27 +3,10 @@ import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
-import Img from "gatsby-image"
 
 export default function Home({ data }) {
-  console.log(data)
   return (
     <Layout>
-      <figure
-        css={css`
-          max-height: 100%;
-          height: 152px;
-        `}
-      >
-        <Img
-          css={css`
-            height: 100%;
-          `}
-          imgStyle={{ objectFit: "contain" }}
-          fluid={data.fileName.childImageSharp.fluid}
-          alt="Fat cat"
-        />
-      </figure>
       <h1
         css={css`
           display: inline-block;
@@ -78,13 +61,6 @@ export const query = graphql`
             slug
           }
           excerpt
-        }
-      }
-    }
-    fileName: file(relativePath: { eq: "images/cat.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 128, maxHeight: 152) {
-          ...GatsbyImageSharpFluid
         }
       }
     }
