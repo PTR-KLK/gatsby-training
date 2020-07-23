@@ -1,8 +1,9 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { PageLink } from "./pageLink"
 
 export default function Header() {
   const { fileName } = useStaticQuery(
@@ -46,12 +47,7 @@ export default function Header() {
           margin-bottom: ${rhythm(1 / 4)};
         `}
       >
-        <Link
-          to={`/`}
-          css={css`
-            text-decoration: none;
-          `}
-        >
+        <PageLink to={`/`}>
           <h3
             css={css`
               margin: 0;
@@ -59,14 +55,14 @@ export default function Header() {
           >
             Simple Cat Site
           </h3>
-        </Link>
+        </PageLink>
         <section
           css={css`
             margin: 0 0 0 auto;
           `}
         >
-          <Link to={`/portfolio/`}>Portfolio</Link>{" "}
-          <Link to={`/about/`}>About</Link>
+          <PageLink to={`/portfolio/`}>Portfolio</PageLink>{" "}
+          <PageLink to={`/about/`}>About</PageLink>
         </section>
       </nav>
     </header>

@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Simple Cat Site`,
+        short_name: `Cat Site`,
         start_url: `/`,
         background_color: `#6b37bf`,
         theme_color: `#6b37bf`,

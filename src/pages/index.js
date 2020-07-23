@@ -1,8 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
+import { PageLink } from "../components/pageLink"
 
 export default function Home({ data }) {
   return (
@@ -18,7 +19,7 @@ export default function Home({ data }) {
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <section key={node.id}>
-          <Link
+          <PageLink
             to={node.fields.slug}
             css={css`
               height: 100%;
@@ -39,7 +40,7 @@ export default function Home({ data }) {
               </span>
             </h3>
             <p>{node.excerpt}</p>
-          </Link>
+          </PageLink>
         </section>
       ))}
     </Layout>
