@@ -1,5 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 
 export default function Footer() {
@@ -26,10 +25,6 @@ export default function Footer() {
         href={site.siteMetadata.authorSite}
         target="_blank"
         rel="noopener noreferrer"
-        css={css`
-          text-decoration: none;
-          color: inherit;
-        `}
       >
         {site.siteMetadata.author}
       </a>{" "}
@@ -38,13 +33,20 @@ export default function Footer() {
         href={site.siteMetadata.template}
         target="_blank"
         rel="noopener noreferrer"
-        css={css`
-          text-decoration: none;
-          color: inherit;
-        `}
       >
         gatsby
       </a>
+      <br />
+      <span>
+        Photo by{" "}
+        <a href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Manja Vitolic
+        </a>{" "}
+        on{" "}
+        <a href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Unsplash
+        </a>
+      </span>
     </footer>
   )
 }

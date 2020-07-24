@@ -9,10 +9,10 @@ export default function Header() {
   const { fileName } = useStaticQuery(
     graphql`
       query {
-        fileName: file(relativePath: { eq: "images/cat.png" }) {
+        fileName: file(relativePath: { eq: "images/cat.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 128, maxHeight: 152) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 2560) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -24,14 +24,13 @@ export default function Header() {
     <header>
       <figure
         css={css`
-          max-height: 100%;
-          height: 100px;
+          
           margin: 0;
         `}
       >
         <Img
           css={css`
-            height: 100%;
+            width: 100%;
           `}
           imgStyle={{ objectFit: "contain" }}
           loading="eager"
