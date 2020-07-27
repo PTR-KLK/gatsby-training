@@ -1,6 +1,5 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { PageLink } from "./pageLink"
@@ -9,7 +8,7 @@ export default function Header() {
   const { fileName } = useStaticQuery(
     graphql`
       query {
-        fileName: file(relativePath: { eq: "images/cat.jpg" }) {
+        fileName: file(relativePath: { eq: "images/grass.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 2560) {
               ...GatsbyImageSharpFluid_tracedSVG
@@ -22,28 +21,15 @@ export default function Header() {
 
   return (
     <header>
-      <figure
-        css={css`
-          
-          margin: 0;
-        `}
-      >
-        <Img
-          css={css`
-            width: 100%;
-          `}
-          imgStyle={{ objectFit: "contain" }}
-          loading="eager"
-          fluid={fileName.childImageSharp.fluid}
-          alt="Fat cat"
-        />
-      </figure>
       <nav
         css={css`
           display: flex;
           align-items: baseline;
           width: 100%;
-          margin-bottom: ${rhythm(1 / 4)};
+          position: fixed;
+          z-index: 3;
+          color: #fff;
+          background: green;
         `}
       >
         <PageLink to={`/`}>
@@ -64,6 +50,24 @@ export default function Header() {
           <PageLink to={`/about/`}>About</PageLink>
         </section>
       </nav>
+      <figure
+        css={css`
+          margin: 0;
+        `}
+      >
+        <Img
+          css={css`
+            width: 100%;
+            height: 33vh;
+            z-index: 1;
+            box-shadow: none, 0 1px 2px rgba(0,0,0,0.24) inset;
+          `}
+          imgStyle={{ objectFit: "cover" }}
+          loading="eager"
+          fluid={fileName.childImageSharp.fluid}
+          alt="Fat cat"
+        />
+      </figure>
     </header>
   )
 }

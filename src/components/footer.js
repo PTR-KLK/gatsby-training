@@ -38,12 +38,23 @@ export default function Footer() {
       </a>
       <br />
       <span>
-        Photo by{" "}
+        Cat photo by{" "}
         <a href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
           Manja Vitolic
         </a>{" "}
         on{" "}
         <a href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Unsplash
+        </a>
+      </span>
+      <br />
+      <span>
+        Grass photo by{" "}
+        <a href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Bradley Brister
+        </a>{" "}
+        on{" "}
+        <a href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
           Unsplash
         </a>
       </span>
