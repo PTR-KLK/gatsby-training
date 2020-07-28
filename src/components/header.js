@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { PageLink } from "./pageLink"
+import { InView } from "react-intersection-observer"
 
 export default function Header({ pageTitle }) {
   const { ...data } = useStaticQuery(
@@ -27,6 +28,10 @@ export default function Header({ pageTitle }) {
     `
   )
 
+  const [figureVisible, setFigureVisibility] = useState(true)
+
+  const onChangeVisibility = inView => setFigureVisibility(inView)
+
   return (
     <header>
       <nav
@@ -39,6 +44,7 @@ export default function Header({ pageTitle }) {
           position: fixed;
           z-index: 4;
           color: #fff;
+          background: ${figureVisible ? "none" : "#4f6d7a"};
         `}
       >
         <PageLink to={`/`}>
@@ -59,7 +65,10 @@ export default function Header({ pageTitle }) {
           <PageLink to={`/about/`}>About</PageLink>
         </section>
       </nav>
-      <figure
+      <InView
+        as="figure"
+        onChange={onChangeVisibility}
+        threshold={0.2}
         css={css`
           margin: 0;
           display: flex;
@@ -80,7 +89,7 @@ export default function Header({ pageTitle }) {
         <Img
           css={css`
             width: 100%;
-            height: 33vh;
+            height: 40vh;
             z-index: 1;
             box-shadow: none, 0 1px 2px rgba(0, 0, 0, 0.24) inset;
             backgroundcolor: #697c17;
@@ -90,7 +99,7 @@ export default function Header({ pageTitle }) {
           fluid={data.grass.childImageSharp.fluid}
           alt="Grass"
         />
-      </figure>
+      </InView>
     </header>
   )
 }

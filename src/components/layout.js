@@ -10,7 +10,7 @@ export default function Layout({ children, pageTitle }) {
       <Header pageTitle={pageTitle} />
       <section
         css={css`
-          min-height: 67vh;
+          min-height: 60vh;
           z-index: 3;
           display: flex;
           flex-wrap: wrap;
