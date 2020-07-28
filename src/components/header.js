@@ -36,10 +36,9 @@ export default function Header({ pageTitle }) {
           justify-content: space-between;
           width: 100%;
           padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
-          position: sticky;
+          position: fixed;
           z-index: 4;
           color: #fff;
-          background: #697c17;
         `}
       >
         <PageLink to={`/`}>

@@ -10,14 +10,22 @@ export default function Layout({ children, pageTitle }) {
       <Header pageTitle={pageTitle} />
       <section
         css={css`
-          margin: 0 auto;
-          max-width: 700px;
-          padding: ${rhythm(2)};
-          padding-top: ${rhythm(1)};
+          min-height: 67vh;
           z-index: 3;
+          display: flex;
+          flex-wrap: wrap;
         `}
       >
-        {children}
+        <article
+          css={css`
+            margin: 0 auto;
+            max-width: 700px;
+            padding: ${rhythm(2)};
+            padding-top: ${rhythm(1)};
+          `}
+        >
+          {children}
+        </article>
         <Footer />
       </section>
     </main>
