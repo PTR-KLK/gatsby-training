@@ -32,15 +32,7 @@ function Project({ element }) {
 
 export default function Portfolio({ data }) {
   return (
-    <Layout>
-      <h1
-        css={css`
-          display: inline-block;
-          border-bottom: 1px solid;
-        `}
-      >
-        Portfolio
-      </h1>
+    <Layout pageTitle="Portfolio">
       <ul
         css={css`
           list-style: none;

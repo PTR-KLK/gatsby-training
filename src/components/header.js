@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { PageLink } from "./pageLink"
 
-export default function Header() {
+export default function Header({ pageTitle }) {
   const { ...data } = useStaticQuery(
     graphql`
       query {
@@ -37,7 +37,7 @@ export default function Header() {
           width: 100%;
           padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
           position: sticky;
-          z-index: 3;
+          z-index: 4;
           color: #fff;
           background: #697c17;
         `}
@@ -47,7 +47,7 @@ export default function Header() {
             css={css`
               width: ${rhythm(1.75)};
               height: ${rhythm(1.75)};
-              border-radius: ${rhythm(0.25)};
+              border-radius: 50%;
             `}
             loading="eager"
             fluid={data.cat.childImageSharp.fluid}
@@ -63,8 +63,21 @@ export default function Header() {
       <figure
         css={css`
           margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         `}
       >
+        <figcaption
+          css={css`
+            position: absolute;
+            background: none;
+            color: #fff;
+            z-index: 2;
+          `}
+        >
+          <h1>{pageTitle}</h1>
+        </figcaption>
         <Img
           css={css`
             width: 100%;
@@ -73,7 +86,7 @@ export default function Header() {
             box-shadow: none, 0 1px 2px rgba(0, 0, 0, 0.24) inset;
             backgroundcolor: #697c17;
           `}
-          imgStyle={{ objectFit: "cover" }}
+          imgStyle={{ objectFit: "cover", filter: "brightness(75%)" }}
           loading="eager"
           fluid={data.grass.childImageSharp.fluid}
           alt="Grass"

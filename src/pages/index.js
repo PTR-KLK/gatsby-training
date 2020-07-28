@@ -7,15 +7,7 @@ import { PageLink } from "../components/pageLink"
 
 export default function Home({ data }) {
   return (
-    <Layout>
-      <h1
-        css={css`
-          display: inline-block;
-          border-bottom: 1px solid;
-        `}
-      >
-        Cat adventures
-      </h1>
+    <Layout pageTitle="Cat adventures">
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <section key={node.id}>
