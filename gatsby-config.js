@@ -14,8 +14,8 @@ module.exports = {
     description: `A simple description about cats doing things...`,
     author: `ptrklk`,
     authorSite: `https://github.com/PTR-KLK`,
-    template: 'https://github.com/gatsbyjs/gatsby-starter-hello-world',
-    created: '2020',
+    template: "https://github.com/gatsbyjs/gatsby-starter-hello-world",
+    created: "2020",
   },
   plugins: [
     {
@@ -43,7 +43,17 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
+    },
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
