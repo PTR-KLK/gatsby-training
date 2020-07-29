@@ -26,6 +26,7 @@ export default function Footer() {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         width: 100%;
         padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
         color: #fff;

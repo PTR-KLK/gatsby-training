@@ -68,12 +68,13 @@ export default function Header({ pageTitle }) {
       <InView
         as="figure"
         onChange={onChangeVisibility}
-        threshold={0.2}
+        threshold={0.15}
         css={css`
           margin: 0;
           display: flex;
           align-items: center;
           justify-content: center;
+          text-align: center;
         `}
       >
         <figcaption
@@ -89,12 +90,12 @@ export default function Header({ pageTitle }) {
         <Img
           css={css`
             width: 100%;
-            height: 40vh;
+            height: 50vh;
             z-index: 1;
             box-shadow: none, 0 1px 2px rgba(0, 0, 0, 0.24) inset;
             backgroundcolor: #697c17;
           `}
-          imgStyle={{ objectFit: "cover", filter: "brightness(75%)" }}
+          imgStyle={{ objectFit: "cover", filter: "brightness(50%)" }}
           loading="eager"
           fluid={data.grass.childImageSharp.fluid}
           alt="Grass"

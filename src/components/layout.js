@@ -10,7 +10,7 @@ export default function Layout({ children, pageTitle }) {
       <Header pageTitle={pageTitle} />
       <section
         css={css`
-          min-height: 60vh;
+          min-height: 50vh;
           z-index: 3;
           display: flex;
           flex-wrap: wrap;
@@ -19,6 +19,7 @@ export default function Layout({ children, pageTitle }) {
         <article
           css={css`
             margin: 0 auto;
+            width: 100%;
             max-width: 700px;
             padding: ${rhythm(2)};
             padding-top: ${rhythm(1)};
