@@ -8,7 +8,6 @@ import { PageLink } from "../components/pageLink"
 export default function Home({ data }) {
   return (
     <Layout pageTitle="Cat adventures">
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <section key={node.id}>
           <PageLink
@@ -42,7 +41,6 @@ export default function Home({ data }) {
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
       edges {
         node {
           id

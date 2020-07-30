@@ -14,15 +14,15 @@ export default function Layout({ children, pageTitle }) {
           z-index: 3;
           display: flex;
           flex-wrap: wrap;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
         `}
       >
         <article
           css={css`
             margin: 0 auto;
             width: 100%;
-            max-width: 700px;
-            padding: ${rhythm(2)};
-            padding-top: ${rhythm(1)};
+            max-width: 800px;
+            padding: ${rhythm(1)};
           `}
         >
           {children}

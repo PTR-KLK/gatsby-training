@@ -4,6 +4,7 @@ import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { PageLink } from "./pageLink"
+import { Link } from "gatsby"
 import { InView } from "react-intersection-observer"
 
 export default function Header({ pageTitle }) {
@@ -44,10 +45,10 @@ export default function Header({ pageTitle }) {
           position: fixed;
           z-index: 4;
           color: #fff;
-          background: ${figureVisible ? "none" : "#4f6d7a"};
+          background: ${figureVisible ? "none" : "#363434"};
         `}
       >
-        <PageLink to={`/`}>
+        <Link to={`/`}>
           <Img
             css={css`
               width: ${rhythm(1.75)};
@@ -58,7 +59,7 @@ export default function Header({ pageTitle }) {
             fluid={data.cat.childImageSharp.fluid}
             alt="Cat staring at you"
           />
-        </PageLink>
+        </Link>
         <section>
           <PageLink to={`/`}>Blog</PageLink>{" "}
           <PageLink to={`/portfolio/`}>Portfolio</PageLink>{" "}
@@ -92,7 +93,6 @@ export default function Header({ pageTitle }) {
             width: 100%;
             height: 50vh;
             z-index: 1;
-            box-shadow: none, 0 1px 2px rgba(0, 0, 0, 0.24) inset;
             backgroundcolor: #697c17;
           `}
           imgStyle={{ objectFit: "cover", filter: "brightness(50%)" }}

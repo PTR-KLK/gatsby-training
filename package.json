@@ -25,6 +25,7 @@
     "gatsby-plugin-sharp": "^2.6.21",
     "gatsby-plugin-typography": "^2.5.10",
     "gatsby-remark-prismjs": "^3.5.10",
+    "gatsby-remark-responsive-iframe": "^2.4.12",
     "gatsby-source-filesystem": "^2.3.20",
     "gatsby-source-github-api": "^0.2.1",
     "gatsby-transformer-remark": "^2.8.25",
@@ -36,7 +37,9 @@
     "react-intersection-observer": "^8.26.2",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "typography-theme-alton": "^0.16.19"
+    "typography-theme-alton": "^0.16.19",
+    "typography-theme-lincoln": "^0.16.19",
+    "typography-theme-noriega": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "2.0.5"
