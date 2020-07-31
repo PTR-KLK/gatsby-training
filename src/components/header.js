@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { PageLink } from "./pageLink"
+import { PageLink } from "./links"
 import { Link } from "gatsby"
 import { InView } from "react-intersection-observer"
 

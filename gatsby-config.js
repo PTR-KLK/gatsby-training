@@ -74,9 +74,11 @@ module.exports = {
                   name
                   description
                   url
-                  stargazers {
-                    totalCount
+                  primaryLanguage{
+                    name
+                    color
                   }
+                  pushedAt
                 }
               }
             }

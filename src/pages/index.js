@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
-import { PageLink } from "../components/pageLink"
+import { PageLink } from "../components/links"
 
 export default function Home({ data }) {
   return (

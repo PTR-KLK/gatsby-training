@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { ExternalLink } from "./pageLink"
+import { ExternalLink } from "./links"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 
@@ -43,13 +43,14 @@ export default function Footer() {
         >
           {site.siteMetadata.author}
         </ExternalLink>{" "}
-        created with{" "}
+        powered by{" "}
         <ExternalLink
-          href={site.siteMetadata.template}
+          href={"https://www.gatsbyjs.org/"}
           target="_blank"
           rel="noopener noreferrer"
         >
-          gatsby-starter-hello-world
+          Gatsby{" "}
+          <span role="img" aria-label="heart">❤️</span>
         </ExternalLink>
       </span>
       <span>

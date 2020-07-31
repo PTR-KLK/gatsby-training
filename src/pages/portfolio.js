@@ -3,29 +3,61 @@ import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { graphql } from "gatsby"
+import { ExternalLinkIcon } from "../components/icons"
+import { ExternalLink } from "../components/links"
 
-function Project({ element }) {
+function Project({ element, lastNode }) {
   return (
     <li>
-      <a
+      <ExternalLink
         href={element.node.url}
         target="_blank"
         rel="noopener noreferrer"
         css={css`
-          text-decoration: none;
-          color: inherit;
+          display: flex;
+          align-items: center;
         `}
       >
-        <h3
+        <ExternalLinkIcon size={24} />
+        <section
           css={css`
-            margin-bottom: ${rhythm(1 / 4)};
-            text-transform: capitalize;
+            width: 100%;
+            padding: ${rhythm(1 / 2)} 0;
           `}
         >
-          {element.node.name}
-        </h3>
-        {element.node.description ? <p>{element.node.description}</p> : null}
-      </a>
+          <h3
+            css={css`
+              margin-bottom: ${rhythm(1 / 4)};
+              text-transform: capitalize;
+            `}
+          >
+            {element.node.name}
+          </h3>
+          {element.node.description ? (
+            <p
+              css={css`
+                margin-bottom: ${rhythm(1 / 4)};
+              `}
+            >
+              {element.node.description}
+            </p>
+          ) : null}
+          <p>Updated: {element.node.pushedAt.slice(0, 10)}</p>
+          <span
+            css={css`
+              border-radius: 50%;
+              display: inline-block;
+              height: 12px;
+              position: relative;
+              top: 1px;
+              width: 12px;
+              background-color: ${element.node.primaryLanguage.color};
+            `}
+          />
+          <p>{element.node.primaryLanguage.name}</p>
+        </section>
+      </ExternalLink>
+      {lastNode ? null : <hr />}
     </li>
   )
 }
@@ -39,8 +71,12 @@ export default function Portfolio({ data }) {
           margin: 0;
         `}
       >
-        {data.githubData.data.user.repositories.edges.map(e => (
-          <Project key={e.node.name} element={e} />
+        {data.githubData.data.user.repositories.edges.map((e, idx, arr) => (
+          <Project
+            key={e.node.name}
+            element={e}
+            lastNode={idx === arr.length - 1}
+          />
         ))}
       </ul>
     </Layout>
@@ -57,10 +93,12 @@ export const query = graphql`
               node {
                 name
                 url
-                stargazers {
-                  totalCount
-                }
                 description
+                pushedAt
+                primaryLanguage {
+                  color
+                  name
+                }
               }
             }
           }
