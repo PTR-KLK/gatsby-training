@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
+  const heroDescription = <h1>{post.frontmatter.title}</h1>
+
   return (
-    <Layout pageTitle={post.frontmatter.title}>
+    <Layout heroDescription={heroDescription}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

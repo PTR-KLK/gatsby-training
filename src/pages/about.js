@@ -3,8 +3,10 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 export default function About({ data }) {
+  const heroDescription = <h1>{`About ${data.site.siteMetadata.title}`}</h1>
+
   return (
-    <Layout pageTitle={`About ${data.site.siteMetadata.title}`}>
+    <Layout heroDescription={heroDescription}>
       <p>
         Cat ipsum dolor sit amet, your pillow is now my pet bed for ooooh
         feather moving feather! inspect anything brought into the house for why

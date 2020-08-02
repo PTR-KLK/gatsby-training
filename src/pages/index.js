@@ -6,8 +6,10 @@ import Layout from "../components/layout"
 import { PageLink } from "../components/links"
 
 export default function Home({ data }) {
+  const heroDescription = <h1>Cat adventures</h1>
+
   return (
-    <Layout pageTitle="Cat adventures">
+    <Layout heroDescription={heroDescription}>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <section key={node.id}>
           <PageLink

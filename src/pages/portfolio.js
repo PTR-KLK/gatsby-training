@@ -82,8 +82,10 @@ function Project({ element, lastNode }) {
 }
 
 export default function Portfolio({ data }) {
+  const heroDescription = <h1>Portfolio</h1>
+
   return (
-    <Layout pageTitle="Portfolio">
+    <Layout heroDescription={heroDescription}>
       <ul
         css={css`
           list-style: none;

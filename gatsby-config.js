@@ -68,13 +68,17 @@ module.exports = {
         token: process.env.GATSBY_API_TOKEN,
         graphQLQuery: `query {
           user(login: "PTR-KLK") {
+            avatarUrl
+            isHireable
+            name
+            login
             repositories(first: 4, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               edges {
                 node {
                   name
                   description
                   url
-                  primaryLanguage{
+                  primaryLanguage {
                     name
                     color
                   }
@@ -83,7 +87,8 @@ module.exports = {
               }
             }
           }
-        }`,
+        }
+        `,
       },
     },
   ],
