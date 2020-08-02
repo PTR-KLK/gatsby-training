@@ -8,7 +8,11 @@ import { ExternalLink } from "../components/links"
 
 function Project({ element, lastNode }) {
   return (
-    <li>
+    <li
+      css={css`
+        margin: 0;
+      `}
+    >
       <ExternalLink
         href={element.node.url}
         target="_blank"
@@ -16,6 +20,7 @@ function Project({ element, lastNode }) {
         css={css`
           display: flex;
           align-items: center;
+          margin: 0;
         `}
       >
         <ExternalLinkIcon size={24} />
@@ -42,19 +47,33 @@ function Project({ element, lastNode }) {
               {element.node.description}
             </p>
           ) : null}
-          <p>Updated: {element.node.pushedAt.slice(0, 10)}</p>
-          <span
+          <footer
             css={css`
-              border-radius: 50%;
-              display: inline-block;
-              height: 12px;
-              position: relative;
-              top: 1px;
-              width: 12px;
-              background-color: ${element.node.primaryLanguage.color};
+              display: flex;
             `}
-          />
-          <p>{element.node.primaryLanguage.name}</p>
+          >
+            <p
+              css={css`
+                margin: 0 ${rhythm(1 / 4)} 0 0;
+              `}
+            >
+              Updated: {element.node.pushedAt.slice(0, 10)}
+            </p>
+            <p>
+              <span
+                css={css`
+                  border-radius: 50%;
+                  display: inline-block;
+                  height: 12px;
+                  position: relative;
+                  top: 1px;
+                  width: 12px;
+                  background-color: ${element.node.primaryLanguage.color};
+                `}
+              />{" "}
+              {element.node.primaryLanguage.name}
+            </p>
+          </footer>
         </section>
       </ExternalLink>
       {lastNode ? null : <hr />}
