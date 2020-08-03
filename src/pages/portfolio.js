@@ -82,7 +82,63 @@ function Project({ element, lastNode }) {
 }
 
 export default function Portfolio({ data }) {
-  const heroDescription = <h1>Portfolio</h1>
+  const heroDescription = (
+    <ExternalLink
+      href={data.githubData.data.user.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <header
+        css={css`
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          @media (min-width: 425px) {
+            flex-direction: row;
+          }
+        `}
+      >
+        <img
+          src={data.githubData.data.user.avatarUrl}
+          css={css`
+            width: ${rhythm(5)};
+            height: ${rhythm(5)};
+            border-radius: 50%;
+            margin: ${rhythm(0.5)};
+
+            @media (min-width: 1440px) {
+              width: ${rhythm(7.5)};
+              height: ${rhythm(7.5)};
+              margin: ${rhythm(1)};
+            }
+
+            @media (min-width: 2560px) {
+              width: ${rhythm(15)};
+              height: ${rhythm(15)};
+              margin: ${rhythm(2)};
+            }
+          `}
+          alt="Just me"
+        />
+        <section
+          css={css`
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & > * {
+              margin: 0;
+            }
+          `}
+        >
+          <h1>{data.githubData.data.user.name}</h1>
+          <p>{data.githubData.data.user.login}</p>
+          {data.githubData.data.user.isHireable ? <p>I'm Hireable</p> : null}
+        </section>
+      </header>
+    </ExternalLink>
+  )
 
   return (
     <Layout heroDescription={heroDescription}>
@@ -109,6 +165,11 @@ export const query = graphql`
     githubData {
       data {
         user {
+          url
+          avatarUrl
+          isHireable
+          name
+          login
           repositories {
             edges {
               node {

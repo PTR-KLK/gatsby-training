@@ -68,6 +68,7 @@ module.exports = {
         token: process.env.GATSBY_API_TOKEN,
         graphQLQuery: `query {
           user(login: "PTR-KLK") {
+            url
             avatarUrl
             isHireable
             name
@@ -87,7 +88,7 @@ module.exports = {
               }
             }
           }
-        }
+        }        
         `,
       },
     },

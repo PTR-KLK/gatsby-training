@@ -30,7 +30,7 @@ export default function Footer() {
         width: 100%;
         padding: ${rhythm(1)};
         color: #fff;
-        background: #3E4535;
+        background: #3e4535;
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.24);
       `}
     >
@@ -50,26 +50,44 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           Gatsby{" "}
-          <span role="img" aria-label="heart">❤️</span>
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>
         </ExternalLink>
       </span>
       <span>
         Cat photo by{" "}
-        <ExternalLink href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        <ExternalLink
+          href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Manja Vitolic
         </ExternalLink>{" "}
         on{" "}
-        <ExternalLink href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        <ExternalLink
+          href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Unsplash
         </ExternalLink>
       </span>
       <span>
         Grass photo by{" "}
-        <ExternalLink href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        <ExternalLink
+          href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Bradley Brister
         </ExternalLink>{" "}
         on{" "}
-        <ExternalLink href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        <ExternalLink
+          href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Unsplash
         </ExternalLink>
       </span>
