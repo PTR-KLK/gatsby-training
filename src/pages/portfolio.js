@@ -82,12 +82,18 @@ function Project({ element, lastNode }) {
 }
 
 export default function Portfolio({ data }) {
+  
+  const {
+    url,
+    avatarUrl,
+    name,
+    login,
+    isHireable,
+    repositories,
+  } = data.githubData.data.user
+
   const heroDescription = (
-    <ExternalLink
-      href={data.githubData.data.user.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <ExternalLink href={url} target="_blank" rel="noopener noreferrer">
       <header
         css={css`
           display: flex;
@@ -100,7 +106,7 @@ export default function Portfolio({ data }) {
         `}
       >
         <img
-          src={data.githubData.data.user.avatarUrl}
+          src={avatarUrl}
           css={css`
             width: ${rhythm(5)};
             height: ${rhythm(5)};
@@ -132,9 +138,9 @@ export default function Portfolio({ data }) {
             }
           `}
         >
-          <h1>{data.githubData.data.user.name}</h1>
-          <p>{data.githubData.data.user.login}</p>
-          {data.githubData.data.user.isHireable ? <p>I'm Hireable</p> : null}
+          <h1>{name}</h1>
+          <p>{login}</p>
+          {isHireable ? <p>I'm Hireable</p> : null}
         </section>
       </header>
     </ExternalLink>
@@ -148,7 +154,7 @@ export default function Portfolio({ data }) {
           margin: 0;
         `}
       >
-        {data.githubData.data.user.repositories.edges.map((e, idx, arr) => (
+        {repositories.edges.map((e, idx, arr) => (
           <Project
             key={e.node.name}
             element={e}

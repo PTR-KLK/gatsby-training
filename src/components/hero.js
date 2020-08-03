@@ -30,7 +30,6 @@ export default function Hero({ heroDescription, onChangeVisibility }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          text-align: center;
         `}
       >
         <figcaption
@@ -50,7 +49,7 @@ export default function Hero({ heroDescription, onChangeVisibility }) {
             z-index: 1;
             backgroundcolor: #697c17;
           `}
-          imgStyle={{ objectFit: "cover", filter: "brightness(50%)" }}
+          imgStyle={{ objectFit: "cover", filter: "brightness(40%)" }}
           loading="eager"
           fluid={data.grass.childImageSharp.fluid}
           alt="Grass"

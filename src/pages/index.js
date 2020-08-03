@@ -32,7 +32,7 @@ export default function Home({ data }) {
                 — {node.frontmatter.date}
               </span>
             </h3>
-            <p>{node.excerpt}</p>
+            <p>{node.frontmatter.excerpt}</p>
           </PageLink>
         </section>
       ))}
@@ -49,11 +49,11 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            excerpt
           }
           fields {
             slug
           }
-          excerpt
         }
       }
     }
