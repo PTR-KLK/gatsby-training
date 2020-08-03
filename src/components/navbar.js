@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { css, keyframes } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -21,6 +21,15 @@ export default function Navbar({ figureVisible }) {
     `
   )
 
+  const changeColor = keyframes`
+    0%   {
+      background: none;
+    }
+    100% {
+      background: #363434;
+    }
+`
+
   return (
     <nav
       css={css`
@@ -32,7 +41,15 @@ export default function Navbar({ figureVisible }) {
         position: fixed;
         z-index: 4;
         color: #fff;
-        background: ${figureVisible ? "none" : "#363434"};
+
+        ${!figureVisible
+          ? css`
+              animation: ${changeColor} 1s ease-out;
+              background: #363434;
+            `
+          : css`
+              background: none;
+            `}
       `}
     >
       <Link to={`/`}>
