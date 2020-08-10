@@ -24,7 +24,12 @@ export default function Layout({ children, heroDescription }) {
           margin: 0 auto;
           width: 100%;
           max-width: 800px;
-          padding: ${rhythm(1)};
+          padding: ${rhythm(0.5)};
+        
+
+          @media (min-width: 768px) {
+            padding: ${rhythm(1)}; 
+          }
         `}
       >
         {children}
