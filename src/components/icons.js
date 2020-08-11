@@ -1,8 +1,18 @@
 import styled from "@emotion/styled"
-import { LinkExternalIcon, ThreeBarsIcon } from "@primer/octicons-react"
+import {
+  MarkGithubIcon,
+  ThreeBarsIcon,
+  ClockIcon,
+} from "@primer/octicons-react"
 import { rhythm } from "../utils/typography"
 
-export const ExternalLinkIcon = styled(LinkExternalIcon)`
+export const UpdatedIcon = styled(ClockIcon)`
+  width: 12px;
+  height: 12px;
+  margin: auto 0;
+`
+
+export const ExternalLinkIcon = styled(MarkGithubIcon)`
   margin: ${rhythm(1 / 4)};
 `
 

@@ -25,13 +25,18 @@ export default function Footer() {
       css={css`
         align-self: flex-end;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-flow: column;
+        align-items: center;
         width: 100%;
         padding: ${rhythm(1)};
         color: #fff;
         background: #3e4535;
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.24);
+
+        @media (min-width: 768px) {
+          justify-content: space-between;
+          flex-flow: row;
+        }
       `}
     >
       <span>
@@ -55,42 +60,52 @@ export default function Footer() {
           </span>
         </ExternalLink>
       </span>
-      <span>
-        Cat photo by{" "}
-        <ExternalLink
-          href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Manja Vitolic
-        </ExternalLink>{" "}
-        on{" "}
-        <ExternalLink
-          href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Unsplash
-        </ExternalLink>
-      </span>
-      <span>
-        Grass photo by{" "}
-        <ExternalLink
-          href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Bradley Brister
-        </ExternalLink>{" "}
-        on{" "}
-        <ExternalLink
-          href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Unsplash
-        </ExternalLink>
-      </span>
+      <section css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 768px) {
+          align-items: flex-end;
+        }
+      `}>
+        <span>
+          Cat photo by{" "}
+          <ExternalLink
+            href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Manja Vitolic
+          </ExternalLink>{" "}
+          on{" "}
+          <ExternalLink
+            href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Unsplash
+          </ExternalLink>
+        </span>
+        <span>
+          Grass photo by{" "}
+          <ExternalLink
+            href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Bradley Brister
+          </ExternalLink>{" "}
+          on{" "}
+          <ExternalLink
+            href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Unsplash
+          </ExternalLink>
+        </span>
+      </section>
     </footer>
   )
 }

@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { graphql } from "gatsby"
-import { ExternalLinkIcon } from "../components/icons"
+import { ExternalLinkIcon, UpdatedIcon } from "../components/icons"
 import { ExternalLink } from "../components/links"
 
 function Project({ element, lastNode }) {
@@ -52,27 +52,27 @@ function Project({ element, lastNode }) {
               display: flex;
             `}
           >
+            <UpdatedIcon />
             <p
               css={css`
                 margin: 0 ${rhythm(1 / 4)} 0 0;
               `}
             >
-              Updated: {element.node.pushedAt.slice(0, 10)}
+              {element.node.pushedAt.slice(0, 10).replace(/-/g, "/")}
             </p>
-            <p>
-              <span
-                css={css`
-                  border-radius: 50%;
-                  display: inline-block;
-                  height: 12px;
-                  position: relative;
-                  top: 1px;
-                  width: 12px;
-                  background-color: ${element.node.primaryLanguage.color};
-                `}
-              />{" "}
-              {element.node.primaryLanguage.name}
-            </p>
+            <span
+              css={css`
+                border-radius: 50%;
+                display: inline-block;
+                height: 12px;
+                position: relative;
+                margin: auto 0;
+                top: 1px;
+                width: 12px;
+                background-color: ${element.node.primaryLanguage.color};
+              `}
+            />
+            <p>{element.node.primaryLanguage.name}</p>
           </footer>
         </section>
       </ExternalLink>
@@ -82,7 +82,6 @@ function Project({ element, lastNode }) {
 }
 
 export default function Portfolio({ data }) {
-  
   const {
     url,
     avatarUrl,
