@@ -1,24 +1,13 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { InView } from "react-intersection-observer"
 
-export default function Hero({ heroDescription, onChangeVisibility }) {
-  const { ...data } = useStaticQuery(
-    graphql`
-      query {
-        grass: file(relativePath: { eq: "images/grass.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2560) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `
-  )
-
+export default function Hero({
+  heroDescription,
+  heroImage,
+  onChangeVisibility,
+}) {
   return (
     <header>
       <InView
@@ -42,18 +31,30 @@ export default function Hero({ heroDescription, onChangeVisibility }) {
         >
           {heroDescription}
         </figcaption>
-        <Img
-          css={css`
-            width: 100%;
-            height: 50vh;
-            z-index: 1;
-            backgroundcolor: #697c17;
-          `}
-          imgStyle={{ objectFit: "cover", filter: "brightness(40%)" }}
-          loading="eager"
-          fluid={data.grass.childImageSharp.fluid}
-          alt="Grass"
-        />
+        {heroImage ? (
+          <Img
+            css={css`
+              width: 100%;
+              height: 50vh;
+              z-index: 1;
+              backgroundcolor: #697c17;
+            `}
+            imgStyle={{ objectFit: "cover", filter: "brightness(40%)" }}
+            loading="eager"
+            fluid={heroImage}
+            alt="Grass"
+          />
+        ) : (
+          <span
+            css={css`
+              width: 100%;
+              height: 50vh;
+              z-index: 1;
+              background: black;
+              background-image: radial-gradient(rgba(63, 127, 191, 0.75), black 200%);
+            `}
+          ></span>
+        )}
       </InView>
     </header>
   )

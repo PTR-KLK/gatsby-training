@@ -30,7 +30,7 @@ export default function BlogPost({ data }) {
   )
 
   return (
-    <Layout heroDescription={heroDescription}>
+    <Layout heroDescription={heroDescription} heroImage={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.fluid : null}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.excerpt}
@@ -50,6 +50,13 @@ export const query = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
         excerpt
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 2560) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

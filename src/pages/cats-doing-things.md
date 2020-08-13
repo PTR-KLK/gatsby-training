@@ -2,6 +2,7 @@
 title: "Cats doing things"
 date: "2020-07-17"
 excerpt: "Cats are really sweet."
+featuredImage: ../images/cats-doing-things.jpg
 ---
 
 Here's a video of a cats doing things.

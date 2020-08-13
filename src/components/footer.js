@@ -87,24 +87,6 @@ export default function Footer() {
             Unsplash
           </ExternalLink>
         </span>
-        <span>
-          Grass photo by{" "}
-          <ExternalLink
-            href="https://unsplash.com/@bradley_brister?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Bradley Brister
-          </ExternalLink>{" "}
-          on{" "}
-          <ExternalLink
-            href="https://unsplash.com/s/photos/grass?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Unsplash
-          </ExternalLink>
-        </span>
       </section>
     </footer>
   )

@@ -5,7 +5,7 @@ import Footer from "./footer"
 import Hero from "./hero"
 import Navbar from "./navbar"
 
-export default function Layout({ children, heroDescription }) {
+export default function Layout({ children, heroDescription, heroImage }) {
   const [figureVisible, setFigureVisibility] = useState(true)
 
   const onChangeVisibility = inView => setFigureVisibility(inView)
@@ -15,6 +15,7 @@ export default function Layout({ children, heroDescription }) {
       <Navbar figureVisible={figureVisible} />
       <Hero
         heroDescription={heroDescription}
+        heroImage={heroImage}
         onChangeVisibility={onChangeVisibility}
       />
       <article
