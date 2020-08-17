@@ -26,7 +26,6 @@ export default function Layout({ children, heroDescription, heroImage }) {
           width: 100%;
           max-width: 800px;
           padding: ${rhythm(0.5)};
-        
 
           @media (min-width: 768px) {
             padding: ${rhythm(1)}; 

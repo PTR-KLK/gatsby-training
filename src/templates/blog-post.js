@@ -30,7 +30,14 @@ export default function BlogPost({ data }) {
   )
 
   return (
-    <Layout heroDescription={heroDescription} heroImage={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.fluid : null}>
+    <Layout
+      heroDescription={heroDescription}
+      heroImage={
+        post.frontmatter.featuredImage
+          ? post.frontmatter.featuredImage.childImageSharp.fluid
+          : null
+      }
+    >
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.excerpt}

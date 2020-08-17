@@ -1,7 +1,7 @@
 ---
 title: "Cats doing things"
 date: "2020-07-17"
-excerpt: "Cats are really sweet."
+excerpt: "If it fits i sits. Fooled again thinking the dog likes me meeeeouw but mice hunt by meowing loudly at 5am next to human slave food dispenser play riveting piece on synthesizer keyboard so plays league of legends in the middle of the night i crawl onto your chest and purr gently to help you sleep."
 featuredImage: ../images/cats-doing-things.jpg
 ---
 

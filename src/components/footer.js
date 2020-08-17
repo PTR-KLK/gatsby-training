@@ -31,7 +31,7 @@ export default function Footer() {
         padding: ${rhythm(1)};
         color: #fff;
         background: #3e4535;
-        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 -1px 3px rgba(0,0,0,0.12), 0 -1px 2px rgba(0,0,0,0.24);
 
         @media (min-width: 768px) {
           justify-content: space-between;
