@@ -69,7 +69,8 @@ export default function Navbar({ figureVisible }) {
             ? css`
                 animation: ${changeColor} 250ms ease-out;
                 background: #363434;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+                  0 1px 2px rgba(0, 0, 0, 0.24);
               `
             : css`
                 background: none;
@@ -125,6 +126,10 @@ export default function Navbar({ figureVisible }) {
           color: #fff;
           display: flex;
           align-items: center;
+
+          @media (min-width: 768px) {
+            display: none;
+          }
         `}
       >
         <MenuIcon />
