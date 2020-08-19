@@ -11,7 +11,10 @@ export default function Layout({ children, heroDescription, heroImage }) {
   const onChangeVisibility = inView => setFigureVisibility(inView)
 
   return (
-    <main>
+    <main css={css`
+      background: #F1E9DA;
+      color: #272727;
+    `}>
       <Navbar figureVisible={figureVisible} />
       <Hero
         heroDescription={heroDescription}

@@ -51,10 +51,10 @@ export default function Home({ data }) {
           <BackgroundImage
             Tag="section"
             fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-            backgroundColor="white"
+            backgroundColor="#F1E9DA"
             css={css`
               padding: ${rhythm(1 / 2)};
-              color: white;
+              color: #F1E9DA;
 
               &:after,
               &:before {
@@ -73,7 +73,7 @@ export default function Home({ data }) {
               }
             `}
           >
-            <LinkContent node={node} hrColor="white" />
+            <LinkContent node={node} hrColor="#F1E9DA" />
           </BackgroundImage>
         ) : (
           <section

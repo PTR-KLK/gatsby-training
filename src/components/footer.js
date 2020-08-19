@@ -29,9 +29,8 @@ export default function Footer() {
         align-items: center;
         width: 100%;
         padding: ${rhythm(1)};
-        color: #fff;
-        background: #3e4535;
-        box-shadow: 0 -1px 3px rgba(0,0,0,0.12), 0 -1px 2px rgba(0,0,0,0.24);
+        color: #F1E9DA;
+        background: linear-gradient(30deg, #FF858D, #7A9CC6);
 
         @media (min-width: 768px) {
           justify-content: space-between;

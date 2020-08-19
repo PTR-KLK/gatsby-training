@@ -10,15 +10,15 @@ export const PageLink = styled(Link)`
   }
 
   &:hover {
-    color: #2892d7;
+    color: #F865B0;
 
     hr {
-      border-bottom: 1px solid #2892d7;
+      border-bottom: 1px solid #F865B0;
     }
 
     h3,
     p {
-      color: #2892d7;
+      color: #F865B0;
     }
   }
 `
@@ -32,6 +32,6 @@ export const ExternalLink = styled.a`
   }
 
   &:hover {
-    color: #2892d7;
+    color: #FF3366;
   }
 `

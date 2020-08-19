@@ -110,7 +110,7 @@ export default function Portfolio({ data }) {
             width: ${rhythm(5)};
             height: ${rhythm(5)};
             border-radius: 50%;
-            margin: ${rhythm(0.5)};
+            margin: 0;
 
             @media (min-width: 1440px) {
               width: ${rhythm(7.5)};

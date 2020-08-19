@@ -59,8 +59,8 @@ export default function Navbar({ figureVisible }) {
         position: sticky;
         top: 0;
         z-index: 5;
-        color: #fff;
-        background: #363434;
+        color: #F1E9DA;
+        background: #272727;
 
         @media (min-width: 768px) {
           position: fixed;
@@ -68,12 +68,10 @@ export default function Navbar({ figureVisible }) {
           ${!figureVisible
             ? css`
                 animation: ${changeColor} 250ms ease-out;
-                background: #363434;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-                  0 1px 2px rgba(0, 0, 0, 0.24);
+                background: #272727;
               `
             : css`
-                background: none;
+                background: rgba(0, 0, 0, 0.6);
               `}
         }
       `}
@@ -123,7 +121,7 @@ export default function Navbar({ figureVisible }) {
           background: none;
           border: none;
           padding: 0;
-          color: #fff;
+          color: #F1E9DA;
           display: flex;
           align-items: center;
 
