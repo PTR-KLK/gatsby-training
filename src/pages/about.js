@@ -1,9 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
+import { css } from "@emotion/core"
 import { graphql } from "gatsby"
 
 export default function About({ data }) {
-  const heroDescription = <h1>{`About ${data.site.siteMetadata.title}`}</h1>
+  const heroDescription = <h1 css={css`text-align: center;`}>{`About ${data.site.siteMetadata.title}`}</h1>
 
   return (
     <Layout heroDescription={heroDescription}>

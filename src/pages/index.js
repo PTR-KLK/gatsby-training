@@ -7,7 +7,7 @@ import { PageLink } from "../components/links"
 import BackgroundImage from "gatsby-background-image"
 
 export default function Home({ data }) {
-  const heroDescription = <h1>Cat adventures</h1>
+  const heroDescription = <h1 css={css`text-align: center;`}>Cat adventures</h1>
 
   const LinkContent = ({ node, hrColor }) => {
     return (

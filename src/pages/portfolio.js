@@ -97,6 +97,7 @@ export default function Portfolio({ data }) {
         css={css`
           display: flex;
           align-items: center;
+          justify-content: center;
           flex-direction: column;
 
           @media (min-width: 425px) {
@@ -110,7 +111,7 @@ export default function Portfolio({ data }) {
             width: ${rhythm(5)};
             height: ${rhythm(5)};
             border-radius: 50%;
-            margin: 0;
+            margin: 0 ${rhythm(1)} 0 0;
 
             @media (min-width: 1440px) {
               width: ${rhythm(7.5)};

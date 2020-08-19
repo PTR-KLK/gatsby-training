@@ -1,9 +1,32 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { css, keyframes } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
 import { InView } from "react-intersection-observer"
 import octoface from "../images/octoface2.svg"
+
+const moveBackground = keyframes`
+  0% {
+    bottom: 0;
+    right: -100%;
+  }
+  25% {
+    bottom: -100%;
+    right: -200%;
+  }
+  50% {
+    bottom: -200%;
+    right: -100%;
+  }
+  75% {
+    bottom: -100%;
+    right: 0;
+  }
+  100% {
+    bottom: 0;
+    right: -100%;
+  }
+`
 
 export default function Hero({
   heroDescription,
@@ -19,7 +42,7 @@ export default function Hero({
         css={css`
           margin: 0;
           display: flex;
-          align-items: flex-end;
+          align-items: center;
         `}
       >
         <figcaption
@@ -80,14 +103,14 @@ export default function Hero({
               &:before {
                 content: "";
                 position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
+                width: 300%;
+                height: 300%;
+                bottom: 0;
+                right: 0;
                 z-index: -1;
                 background: url(${octoface});
                 background-position: right bottom;
-                
+                animation: ${moveBackground} 30s linear infinite;
               }
             `}
           ></span>
