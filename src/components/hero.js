@@ -6,25 +6,12 @@ import { InView } from "react-intersection-observer"
 import octoface from "../images/octoface2.svg"
 
 const moveBackground = keyframes`
-  0% {
-    bottom: 0;
-    right: -100%;
+  from {
+    transform: rotate(0deg);
   }
-  25% {
-    bottom: -100%;
-    right: -200%;
-  }
-  50% {
-    bottom: -200%;
-    right: -100%;
-  }
-  75% {
-    bottom: -100%;
-    right: 0;
-  }
-  100% {
-    bottom: 0;
-    right: -100%;
+
+  to {
+    transform: rotate(360deg);
   }
 `
 
@@ -103,14 +90,18 @@ export default function Hero({
               &:before {
                 content: "";
                 position: absolute;
-                width: 300%;
-                height: 300%;
-                bottom: 0;
-                right: 0;
+                width: 160%;
+                padding-top: 160%;
+                top: -10%;
+                left: -30%;
                 z-index: -1;
                 background: url(${octoface});
                 background-position: right bottom;
                 animation: ${moveBackground} 30s linear infinite;
+
+                @media (min-width: 768px) {
+                  top: -80%;
+                }
               }
             `}
           ></span>
