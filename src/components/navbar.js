@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { PageLink } from "./links"
 import { MenuIcon } from "../components/icons"
+import { colors } from "../utils/theme"
 
 export default function Navbar({ figureVisible }) {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -33,7 +34,7 @@ export default function Navbar({ figureVisible }) {
       background: none;
     }
     100% {
-      background: #363434;
+      background: ${colors.dark};
     }
 `
 
@@ -59,8 +60,8 @@ export default function Navbar({ figureVisible }) {
         position: sticky;
         top: 0;
         z-index: 5;
-        color: #F1E9DA;
-        background: #272727;
+        color: ${colors.light};
+        background: ${colors.dark};
 
         @media (min-width: 768px) {
           position: fixed;
@@ -68,7 +69,7 @@ export default function Navbar({ figureVisible }) {
           ${!figureVisible
             ? css`
                 animation: ${changeColor} 250ms ease-out;
-                background: #272727;
+                background: ${colors.dark};
               `
             : css`
                 background: rgba(0, 0, 0, 0.6);
@@ -121,7 +122,7 @@ export default function Navbar({ figureVisible }) {
           background: none;
           border: none;
           padding: 0;
-          color: #F1E9DA;
+          color: ${colors.light};
           display: flex;
           align-items: center;
 

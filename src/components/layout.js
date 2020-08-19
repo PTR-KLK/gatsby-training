@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { colors } from "../utils/theme"
 import Footer from "./footer"
 import Hero from "./hero"
 import Navbar from "./navbar"
@@ -12,8 +13,8 @@ export default function Layout({ children, heroDescription, heroImage }) {
 
   return (
     <main css={css`
-      background: #F1E9DA;
-      color: #272727;
+      background: ${colors.light};
+      color: ${colors.dark};
     `}>
       <Navbar figureVisible={figureVisible} />
       <Hero

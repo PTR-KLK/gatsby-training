@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ExternalLink } from "./links"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { colors } from "../utils/theme"
 
 export default function Footer() {
   const { site } = useStaticQuery(
@@ -29,8 +30,12 @@ export default function Footer() {
         align-items: center;
         width: 100%;
         padding: ${rhythm(1)};
-        color: #F1E9DA;
-        background: linear-gradient(30deg, #FF858D, #7A9CC6);
+        color: ${colors.light};
+        background: linear-gradient(
+          30deg,
+          ${colors.secondary},
+          ${colors.primary}
+        );
 
         @media (min-width: 768px) {
           justify-content: space-between;
@@ -59,15 +64,17 @@ export default function Footer() {
           </span>
         </ExternalLink>
       </span>
-      <section css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      <section
+        css={css`
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
-        @media (min-width: 768px) {
-          align-items: flex-end;
-        }
-      `}>
+          @media (min-width: 768px) {
+            align-items: flex-end;
+          }
+        `}
+      >
         <span>
           Cat photo by{" "}
           <ExternalLink

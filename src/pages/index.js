@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { colors } from "../utils/theme"
 import Layout from "../components/layout"
 import { PageLink } from "../components/links"
 import BackgroundImage from "gatsby-background-image"
@@ -51,10 +52,10 @@ export default function Home({ data }) {
           <BackgroundImage
             Tag="section"
             fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-            backgroundColor="#F1E9DA"
+            backgroundColor={colors.light}
             css={css`
               padding: ${rhythm(1 / 2)};
-              color: #F1E9DA;
+              color: ${colors.light};
 
               &:after,
               &:before {
@@ -73,7 +74,7 @@ export default function Home({ data }) {
               }
             `}
           >
-            <LinkContent node={node} hrColor="#F1E9DA" />
+            <LinkContent node={node} hrColor={colors.light} />
           </BackgroundImage>
         ) : (
           <section
