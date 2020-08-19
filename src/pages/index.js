@@ -37,7 +37,6 @@ export default function Home({ data }) {
   const PostLink = ({ node }) => {
     return (
       <PageLink
-        key={node.id}
         to={node.fields.slug}
         css={css`
           padding: 0;
@@ -96,7 +95,7 @@ export default function Home({ data }) {
   return (
     <Layout heroDescription={heroDescription}>
       {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
-        <>
+        <section key={node.id}>
           <PostLink node={node} />
           {idx === arr.length - 1 ? null : (
             <hr
@@ -109,7 +108,7 @@ export default function Home({ data }) {
               `}
             />
           )}
-        </>
+        </section>
       ))}
     </Layout>
   )
