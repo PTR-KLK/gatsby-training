@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout.component"
+import SEO from "../components/seo.component"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark

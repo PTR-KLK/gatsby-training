@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Layout from "../components/layout"
+import Layout from "../components/layout.component"
 
 export default function Home() {
   const heroDescription = <h1>404</h1>

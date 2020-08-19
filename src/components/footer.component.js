@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { ExternalLink } from "./links"
 import { css } from "@emotion/core"
+import { ExternalLink } from "../styles/links.style"
 import { rhythm } from "../utils/typography"
 import { colors } from "../utils/theme"
 

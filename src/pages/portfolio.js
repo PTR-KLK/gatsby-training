@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout.component"
 import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
 import { graphql } from "gatsby"
-import { ExternalLinkIcon, UpdatedIcon } from "../components/icons"
-import { ExternalLink } from "../components/links"
+import { rhythm } from "../utils/typography"
+import { ExternalLinkIcon, UpdatedIcon } from "../styles/icons.style"
+import { ExternalLink } from "../styles/links.style"
 
 function Project({ element, lastNode }) {
   return (

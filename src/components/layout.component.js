@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { colors } from "../utils/theme"
-import Footer from "./footer"
-import Hero from "./hero"
-import Navbar from "./navbar"
+import Footer from "./footer.component"
+import Hero from "./hero.component"
+import Navbar from "./navbar.component"
 
 export default function Layout({ children, heroDescription, heroImage }) {
   const [figureVisible, setFigureVisibility] = useState(true)

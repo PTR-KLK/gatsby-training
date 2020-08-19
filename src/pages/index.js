@@ -1,11 +1,12 @@
 import React from "react"
+import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { colors } from "../utils/theme"
-import Layout from "../components/layout"
-import { PageLink } from "../components/links"
-import BackgroundImage from "gatsby-background-image"
+import Layout from "../components/layout.component"
+import { PageLink } from "../styles/links.style"
+
 
 export default function Home({ data }) {
   const heroDescription = <h1 css={css`text-align: center;`}>Cat adventures</h1>

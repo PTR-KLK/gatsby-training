@@ -3,8 +3,8 @@ import { css, keyframes } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { PageLink } from "./links"
-import { MenuIcon } from "../components/icons"
+import { PageLink } from "../styles/links.style"
+import { MenuIcon } from "../styles/icons.style"
 import { colors } from "../utils/theme"
 
 export default function Navbar({ figureVisible }) {

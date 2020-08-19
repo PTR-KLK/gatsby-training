@@ -1,10 +1,10 @@
 import React from "react"
-import { css, keyframes } from "@emotion/core"
-import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
+import { css, keyframes } from "@emotion/core"
 import { InView } from "react-intersection-observer"
+import { rhythm } from "../utils/typography"
 import { colors } from "../utils/theme"
-import octoface from "../images/octoface2.svg"
+import octoface from "../images/octoface.svg"
 
 const moveBackground = keyframes`
   from {
