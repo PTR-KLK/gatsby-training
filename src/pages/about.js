@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/layout.component"
-import { css } from "@emotion/core"
+import { StyledHeading } from "../styles/about.style"
 import { graphql } from "gatsby"
 
 export default function About({ data }) {
-  const heroDescription = <h1 css={css`text-align: center;`}>{`About ${data.site.siteMetadata.title}`}</h1>
+  const heroDescription = (
+    <StyledHeading>{`About ${data.site.siteMetadata.title}`}</StyledHeading>
+  )
 
   return (
     <Layout heroDescription={heroDescription}>

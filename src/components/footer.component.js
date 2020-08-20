@@ -1,9 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
+import { StyledFooter, StyledSection } from "../styles/footer.style"
 import { ExternalLink } from "../styles/links.style"
-import { rhythm } from "../utils/typography"
-import { colors } from "../utils/theme"
 
 export default function Footer() {
   const { site } = useStaticQuery(
@@ -22,27 +20,7 @@ export default function Footer() {
   )
 
   return (
-    <footer
-      css={css`
-        align-self: flex-end;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        width: 100%;
-        padding: ${rhythm(1)};
-        color: ${colors.light};
-        background: linear-gradient(
-          30deg,
-          ${colors.secondary},
-          ${colors.primary}
-        );
-
-        @media (min-width: 768px) {
-          justify-content: space-between;
-          flex-flow: row;
-        }
-      `}
-    >
+    <StyledFooter>
       <span>
         Theme by{" "}
         <ExternalLink
@@ -64,17 +42,7 @@ export default function Footer() {
           </span>
         </ExternalLink>
       </span>
-      <section
-        css={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
-          @media (min-width: 768px) {
-            align-items: flex-end;
-          }
-        `}
-      >
+      <StyledSection>
         <span>
           Cat photo by{" "}
           <ExternalLink
@@ -93,7 +61,7 @@ export default function Footer() {
             Unsplash
           </ExternalLink>
         </span>
-      </section>
-    </footer>
+      </StyledSection>
+    </StyledFooter>
   )
 }

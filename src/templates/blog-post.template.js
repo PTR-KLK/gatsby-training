@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
+import { StyledHeader } from "../styles/blog-post.style"
 import Layout from "../components/layout.component"
 import SEO from "../components/seo.component"
 
@@ -9,24 +8,11 @@ export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
   const heroDescription = (
-    <header
-      css={css`
-        max-width: 800px;
-        padding: 0 ${rhythm(0.5)};
-        & > * {
-          margin: 0;
-          padding: ${rhythm(0.25)} 0;
-        }
-
-        @media (min-width: 768px) {
-          padding: 0 ${rhythm(1)};
-        }
-      `}
-    >
+    <StyledHeader>
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
       <p>{post.frontmatter.excerpt}</p>
-    </header>
+    </StyledHeader>
   )
 
   return (

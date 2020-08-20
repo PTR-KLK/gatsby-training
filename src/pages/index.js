@@ -1,36 +1,28 @@
 import React from "react"
-import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
-import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
 import { colors } from "../utils/theme"
 import Layout from "../components/layout.component"
-import { PageLink } from "../styles/links.style"
-
+import {
+  StyledHeading,
+  StyledHeader,
+  StyledPostLinkHr,
+  StyledPageLink,
+  StyledBackgroundImage,
+  StyledSection,
+  StyledHr,
+} from "../styles/index.style"
 
 export default function Home({ data }) {
-  const heroDescription = <h1 css={css`text-align: center;`}>Cat adventures</h1>
+  const heroDescription = <StyledHeading>Cat adventures</StyledHeading>
 
   const LinkContent = ({ node, hrColor }) => {
     return (
       <>
-        <header
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-          `}
-        >
+        <StyledHeader>
           <h3>{node.frontmatter.title}</h3>
           <p>{node.frontmatter.date}</p>
-        </header>
-        <hr
-          css={css`
-            border-bottom: 1px solid ${hrColor};
-            margin: 0;
-          `}
-        />
+        </StyledHeader>
+        <StyledPostLinkHr color={hrColor} />
         <p>{node.frontmatter.excerpt}</p>
       </>
     )
@@ -38,59 +30,21 @@ export default function Home({ data }) {
 
   const PostLink = ({ node }) => {
     return (
-      <PageLink
-        to={node.fields.slug}
-        css={css`
-          padding: 0;
-
-          & h3,
-          p {
-            margin: 0;
-          }
-        `}
-      >
+      <StyledPageLink to={node.fields.slug}>
         {node.frontmatter.featuredImage ? (
-          <BackgroundImage
+          <StyledBackgroundImage
             Tag="section"
             fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
             backgroundColor={colors.light}
-            css={css`
-              padding: ${rhythm(1 / 2)};
-              color: ${colors.light};
-
-              &:after,
-              &:before {
-                filter: brightness(40%);
-              }
-
-              &:hover {
-                &:after,
-                &:before {
-                  filter: grayscale(100%) contrast(300%) brightness(20%);
-                }
-              }
-
-              @media (min-width: 768px) {
-                padding: ${rhythm(1)};
-              }
-            `}
           >
             <LinkContent node={node} hrColor={colors.light} />
-          </BackgroundImage>
+          </StyledBackgroundImage>
         ) : (
-          <section
-            css={css`
-              padding: 0 ${rhythm(1 / 2)};
-
-              @media (min-width: 768px) {
-                padding: 0 ${rhythm(1)};
-              }
-            `}
-          >
-            <LinkContent node={node} hrColor="black" />
-          </section>
+          <StyledSection>
+            <LinkContent node={node} hrColor={colors.dark} />
+          </StyledSection>
         )}
-      </PageLink>
+      </StyledPageLink>
     )
   }
 
@@ -99,17 +53,7 @@ export default function Home({ data }) {
       {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
         <section key={node.id}>
           <PostLink node={node} />
-          {idx === arr.length - 1 ? null : (
-            <hr
-              css={css`
-                margin: ${rhythm(1 / 2)} 0;
-
-                @media (min-width: 768px) {
-                  margin: ${rhythm(1)};
-                }
-              `}
-            />
-          )}
+          {idx === arr.length - 1 ? null : <StyledHr />}
         </section>
       ))}
     </Layout>

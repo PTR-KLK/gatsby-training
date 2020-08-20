@@ -1,20 +1,11 @@
 import React from "react"
-import Img from "gatsby-image"
-import { css, keyframes } from "@emotion/core"
-import { InView } from "react-intersection-observer"
-import { rhythm } from "../utils/typography"
-import { colors } from "../utils/theme"
-import octoface from "../images/octoface.svg"
-
-const moveBackground = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`
+import {
+  StyledInView,
+  StyledFigcaption,
+  StyledSection,
+  StyledImg,
+  StyledFilter,
+} from "../styles/hero.style"
 
 export default function Hero({
   heroDescription,
@@ -23,92 +14,21 @@ export default function Hero({
 }) {
   return (
     <header>
-      <InView
-        as="figure"
-        onChange={onChangeVisibility}
-        threshold={0.15}
-        css={css`
-          margin: 0;
-          display: flex;
-          align-items: center;
-        `}
-      >
-        <figcaption
-          css={css`
-            width: 100%;
-            position: absolute;
-            background: none;
-            color: ${colors.light};
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: ${rhythm(1 / 2)} 0;
-          `}
-        >
-          <section
-            css={css`
-              width: 100%;
-              max-width: 800px;
-              margin: 0 auto;
-              padding: 0 ${rhythm(0.75)};
-
-              & > * {
-                margin: 0;
-              }
-
-              @media (min-width: 768px) {
-                padding: 0 ${rhythm(2)};
-              }
-            `}
-          >
-            {heroDescription}
-          </section>
-        </figcaption>
+      <StyledInView as="figure" onChange={onChangeVisibility} threshold={0.15}>
+        <StyledFigcaption>
+          <StyledSection>{heroDescription}</StyledSection>
+        </StyledFigcaption>
         {heroImage ? (
-          <Img
-            css={css`
-              width: 100%;
-              height: 50vh;
-              z-index: 1;
-            `}
+          <StyledImg
             imgStyle={{ objectFit: "cover" }}
             loading="eager"
             fluid={heroImage}
             alt="Grass"
           />
         ) : (
-          <span
-            css={css`
-              width: 100%;
-              height: 50vh;
-              z-index: 1;
-              background: linear-gradient(
-                -30deg,
-                ${colors.secondary},
-                ${colors.primary}
-              );
-              position: relative;
-              overflow: hidden;
-
-              &:before {
-                content: "";
-                position: absolute;
-                width: 160%;
-                padding-top: 160%;
-                top: -10%;
-                left: -30%;
-                z-index: -1;
-                background: url(${octoface});
-                background-position: right bottom;
-                animation: ${moveBackground} 30s linear infinite;
-
-                @media (min-width: 768px) {
-                  top: -80%;
-                }
-              }
-            `}
-          ></span>
+          <StyledFilter />
         )}
-      </InView>
+      </StyledInView>
     </header>
   )
 }
