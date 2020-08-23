@@ -4,7 +4,7 @@ import { keyframes } from "@emotion/core"
 import { colors } from "../utils/theme"
 import { rhythm } from "../utils/typography"
 import { InView } from "react-intersection-observer"
-import octoface from "../images/octoface.svg"
+import { OctofaceIcon } from "@primer/octicons-react"
 
 const moveBackground = keyframes`
   from {
@@ -53,28 +53,18 @@ export const StyledImg = styled(Img)`
   z-index: 1;
 `
 
-export const StyledFilter = styled.span`
+export const StyledBackground = styled.span`
   width: 100%;
   height: 50vh;
   z-index: 1;
   background: linear-gradient(-30deg, ${colors.secondary}, ${colors.primary});
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 160%;
-    padding-top: 160%;
-    top: -10%;
-    left: -30%;
-    z-index: -1;
-    background: url(${octoface});
-    background-position: right bottom;
-    animation: ${moveBackground} 30s linear infinite;
-
-    @media (min-width: 768px) {
-      top: -80%;
-    }
-  }
+export const StyledIcon = styled(OctofaceIcon)`
+  height: 80%;
+  width: auto;
+  animation: ${moveBackground} 15s linear infinite;
 `

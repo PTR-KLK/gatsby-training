@@ -4,7 +4,8 @@ import {
   StyledFigcaption,
   StyledSection,
   StyledImg,
-  StyledFilter,
+  StyledBackground,
+  StyledIcon,
 } from "../styles/hero.style"
 
 export default function Hero({
@@ -26,7 +27,9 @@ export default function Hero({
             alt="Grass"
           />
         ) : (
-          <StyledFilter />
+          <StyledBackground>
+            <StyledIcon />
+          </StyledBackground>
         )}
       </StyledInView>
     </header>
