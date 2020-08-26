@@ -21,7 +21,6 @@ import {
 } from "../styles/portfolio.style"
 
 function Project({ element, lastNode }) {
-  console.log(element)
   return (
     <StyledListItem>
       <section>

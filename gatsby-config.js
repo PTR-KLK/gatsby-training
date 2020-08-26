@@ -9,11 +9,12 @@ require("dotenv").config({
 })
 
 module.exports = {
+  pathPrefix: "/simple-cat-site",
   siteMetadata: {
     title: `Simple Cat Site`,
     description: `A simple description about cats doing things...`,
     author: `ptrklk`,
-    authorSite: `https://github.com/PTR-KLK`,
+    authorSite: `https://ptr-klk.github.io`,
     template: "https://github.com/gatsbyjs/gatsby-starter-hello-world",
     created: "2020",
   },
