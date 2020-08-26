@@ -64,7 +64,12 @@ export const StyledBackground = styled.span`
 `
 
 export const StyledIcon = styled(OctofaceIcon)`
-  height: 80%;
-  width: auto;
+  height: auto;
+  width: 70%;
   animation: ${moveBackground} 15s linear infinite;
+
+  @media (min-width: 425px) {
+    height: 70%;
+    width: auto;
+  }
 `

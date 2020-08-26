@@ -72,12 +72,21 @@ module.exports = {
             isHireable
             name
             login
-            repositories(first: 4, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
+            repositories(first: 6, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               edges {
                 node {
                   name
                   description
                   url
+                  homepageUrl
+                  repositoryTopics(first: 3) {
+                    nodes {
+                      url
+                      topic {
+                        name
+                      }
+                    }
+                  }
                   primaryLanguage {
                     name
                     color
@@ -87,7 +96,7 @@ module.exports = {
               }
             }
           }
-        }        
+        }   
         `,
       },
     },

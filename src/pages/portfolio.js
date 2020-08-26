@@ -1,39 +1,79 @@
 import React from "react"
 import Layout from "../components/layout.component"
 import { graphql } from "gatsby"
-import { ExternalLinkIcon, UpdatedIcon } from "../styles/icons.style"
+import {
+  TopicIcon,
+  ExternalLinkIcon,
+  ExternalSiteIcon,
+  UpdatedIcon,
+} from "../styles/icons.style"
 import { ExternalLink } from "../styles/links.style"
 import {
-  StyledLink,
   StyledListItem,
+  StyledLink,
   StyledFooter,
   StyledCircle,
   StyledBioSection,
   StyledBioImg,
   StyledInfoSection,
   StyledList,
+  StyledHr,
 } from "../styles/portfolio.style"
 
 function Project({ element, lastNode }) {
+  console.log(element)
   return (
     <StyledListItem>
-      <StyledLink
-        href={element.node.url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <ExternalLinkIcon size={24} />
-        <section>
-          <h3>{element.node.name}</h3>
-          {element.node.description ? <p>{element.node.description}</p> : null}
-          <StyledFooter>
-            <UpdatedIcon />
+      <section>
+        <h3>{element.node.name}</h3>
+        <StyledHr />
+        {element.node.description ? <p>{element.node.description}</p> : null}
+        {element.node.repositoryTopics.nodes.length > 0 ? (
+          <ul>
+            {element.node.repositoryTopics.nodes.map(e => (
+              <li key={e.topic.name}>
+                <StyledLink
+                  href={e.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <TopicIcon size={12} />
+                  <p>{e.topic.name}</p>
+                </StyledLink>
+              </li>
+            ))}
+          </ul>
+        ) : null} 
+        <StyledFooter>
+          <span>
+            <UpdatedIcon size={24} />
             <p>{element.node.pushedAt.slice(0, 10).replace(/-/g, "/")}</p>
+          </span>
+          <span>
             <StyledCircle color={element.node.primaryLanguage.color} />
             <p>{element.node.primaryLanguage.name}</p>
-          </StyledFooter>
-        </section>
-      </StyledLink>
+          </span>
+          <StyledLink
+            href={element.node.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExternalLinkIcon size={24} />
+            <p>Repo</p>
+          </StyledLink>
+          {element.node.homepageUrl ? (
+            <StyledLink
+              href={element.node.homepageUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalSiteIcon size={24} />
+              <p>Demo</p>
+            </StyledLink>
+          ) : null}
+        </StyledFooter>
+      </section>
+
       {lastNode ? null : <hr />}
     </StyledListItem>
   )
@@ -92,6 +132,15 @@ export const query = graphql`
               node {
                 name
                 url
+                homepageUrl
+                repositoryTopics {
+                  nodes {
+                    url
+                    topic {
+                      name
+                    }
+                  }
+                }
                 description
                 pushedAt
                 primaryLanguage {
