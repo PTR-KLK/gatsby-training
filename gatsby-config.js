@@ -73,7 +73,7 @@ module.exports = {
             isHireable
             name
             login
-            repositories(first: 6, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
+            repositories(first: 8, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC, isFork: false) {
               edges {
                 node {
                   name

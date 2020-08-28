@@ -104,7 +104,7 @@ export default function Portfolio({ data }) {
   return (
     <Layout heroDescription={heroDescription}>
       <StyledList>
-        {repositories.edges.map((e, idx, arr) => (
+        {repositories.edges.filter(e => e.node.name!== login).map((e, idx, arr) => (
           <Project
             key={e.node.name}
             element={e}
