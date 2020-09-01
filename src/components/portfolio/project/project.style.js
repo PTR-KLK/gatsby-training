@@ -1,9 +1,14 @@
 import styled from "@emotion/styled"
-import { rhythm } from "../utils/typography"
-import { ExternalLink } from "./links.style"
-import { colors } from "../utils/theme"
+import { rhythm } from "../../../utils/typography"
+import { colors } from "../../../utils/theme"
+import {
+  MarkGithubIcon,
+  TagIcon,
+  ClockIcon,
+  GlobeIcon,
+} from "@primer/octicons-react"
 
-export const StyledListItem = styled.li`
+export const Li = styled.li`
   margin: 0;
 
   & section {
@@ -31,8 +36,9 @@ export const StyledListItem = styled.li`
         & p {
           align-self: center;
         }
-        
-        &:hover, &:hover a {
+
+        &:hover,
+        &:hover a {
           background: ${colors.accent};
           color: ${colors.dark};
         }
@@ -55,17 +61,27 @@ export const StyledListItem = styled.li`
   }
 `
 
-export const StyledLink = styled(ExternalLink)`
+export const Hyperlink = styled.a`
   display: flex;
   align-items: center;
   margin: 0 0 ${rhythm(1 / 4)} 0;
-    
-    @media (min-width: 768px) {
-      margin: 0;
-    }
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: ${colors.accent};
+  }
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 `
 
-export const StyledFooter = styled.footer`
+export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
 
@@ -92,7 +108,7 @@ export const StyledFooter = styled.footer`
   }
 `
 
-export const StyledCircle = styled.span`
+export const Circle = styled.span`
   border-radius: 50%;
   display: inline-block;
   align-self: center;
@@ -104,51 +120,27 @@ export const StyledCircle = styled.span`
   background-color: ${props => props.color};
 `
 
-export const StyledBioSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  @media (min-width: 425px) {
-    flex-direction: row;
-  }
-`
-
-export const StyledBioImg = styled.img`
-  width: ${rhythm(5)};
-  height: ${rhythm(5)};
-  border-radius: 50%;
-  margin: 0 ${rhythm(1)} 0 0;
-
-  @media (min-width: 1440px) {
-    width: ${rhythm(7.5)};
-    height: ${rhythm(7.5)};
-    margin: ${rhythm(1)};
-  }
-
-  @media (min-width: 2560px) {
-    width: ${rhythm(15)};
-    height: ${rhythm(15)};
-    margin: ${rhythm(2)};
-  }
-`
-
-export const StyledInfoSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  & > * {
-    margin: 0;
-  }
-`
-export const StyledList = styled.ul`
-  list-style: none;
-  margin: 0;
-`
-
-export const StyledHr = styled.hr`
+export const Hr = styled.hr`
   border-bottom: 1px solid ${colors.dark};
   margin: 0;
+`
+
+export const UpdatedIcon = styled(ClockIcon)`
+  margin: 0;
+  align-self: center;
+`
+
+export const TopicIcon = styled(TagIcon)`
+  margin: 0;
+  align-self: center;
+`
+
+export const RepoIcon = styled(MarkGithubIcon)`
+  margin: 0;
+  align-self: center;
+`
+
+export const DemoIcon = styled(GlobeIcon)`
+  margin: 0;
+  align-self: center;
 `

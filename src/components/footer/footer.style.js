@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
-import { rhythm } from "../utils/typography"
-import { colors } from "../utils/theme"
+import { rhythm } from "../../utils/typography"
+import { colors } from "../../utils/theme"
 
-export const StyledFooter = styled.footer`
+export const Container = styled.footer`
   align-self: flex-end;
   display: flex;
   flex-flow: column;
@@ -18,12 +18,24 @@ export const StyledFooter = styled.footer`
   }
 `
 
-export const StyledSection = styled.section`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 768px) {
     align-items: flex-end;
+  }
+`
+export const Hyperlink = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: ${colors.accent};
   }
 `

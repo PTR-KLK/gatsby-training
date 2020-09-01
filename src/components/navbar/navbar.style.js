@@ -1,9 +1,12 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
-import { PageLink } from "../styles/links.style"
+import {
+  ThreeBarsIcon,
+} from "@primer/octicons-react"
+import { Link } from "gatsby"
 import { css, keyframes } from "@emotion/core"
-import { colors } from "../utils/theme"
-import { rhythm } from "../utils/typography"
+import { colors } from "../../utils/theme"
+import { rhythm } from "../../utils/typography"
 
 const changeColor = keyframes`
 0%   {
@@ -14,7 +17,7 @@ const changeColor = keyframes`
 }
 `
 
-export const StyledNav = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   align-items: center;
   align-content: center;
@@ -42,7 +45,29 @@ export const StyledNav = styled.nav`
   }
 `
 
-export const StyledPageLink = styled(PageLink)`
+export const Hyperlink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: ${colors.accent};
+
+    hr {
+      border-bottom: 1px solid ${colors.accent};
+    }
+
+    h3,
+    p {
+      color: ${colors.accent};
+    }
+  }
+`
+
+export const HomeHyperlink = styled(Hyperlink)`
   display: flex;
   align-items: center;
 
@@ -57,7 +82,7 @@ export const StyledPageLink = styled(PageLink)`
   }
 `
 
-export const StyledImg = styled(Img)`
+export const Picture = styled(Img)`
   width: ${rhythm(1.75)};
   height: ${rhythm(1.75)};
   border-radius: 50%;
@@ -68,7 +93,7 @@ export const StyledImg = styled(Img)`
   }
 `
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
   background: none;
   border: none;
   padding: 0;
@@ -81,7 +106,7 @@ export const StyledButton = styled.button`
   }
 `
 
-export const StyledSection = styled.section`
+export const Section = styled.section`
   ${props =>
     props.menuVisible
       ? css`
@@ -101,5 +126,15 @@ export const StyledSection = styled.section`
 
   @media (min-width: 768px) {
     display: block;
+  }
+`
+export const Icon = styled(ThreeBarsIcon)`
+  width: ${rhythm(1)};
+  height: ${rhythm(1)};
+
+  @media (min-width: 768px) {
+    & > * {
+      display: none;
+    }
   }
 `

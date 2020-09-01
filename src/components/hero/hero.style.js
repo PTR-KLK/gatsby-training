@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { keyframes } from "@emotion/core"
-import { colors } from "../utils/theme"
-import { rhythm } from "../utils/typography"
+import { colors } from "../../utils/theme"
+import { rhythm } from "../../utils/typography"
 import { InView } from "react-intersection-observer"
 import { OctofaceIcon } from "@primer/octicons-react"
 
@@ -16,44 +16,38 @@ const moveBackground = keyframes`
   }
 `
 
-export const StyledInView = styled(InView)`
+export const Header = styled(InView)`
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 `
 
-export const StyledFigcaption = styled.figcaption`
-  width: 100%;
-  position: absolute;
-  background: none;
-  color: ${colors.light};
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: ${rhythm(1 / 2)} 0;
-`
-
-export const StyledSection = styled.section`
+export const Section = styled.section`
   width: 100%;
   max-width: 800px;
+  position: absolute;
+  color: ${colors.light};
+  z-index: 2;
   margin: 0 auto;
-  padding: 0 ${rhythm(0.75)};
+  padding: ${rhythm(1 / 2)} ${rhythm(0.75)};
 
   & > * {
     margin: 0;
   }
 
   @media (min-width: 768px) {
-    padding: 0 ${rhythm(2)};
+    padding: ${rhythm(1 / 2)} ${rhythm(2)};
   }
 `
 
-export const StyledImg = styled(Img)`
+export const Picture = styled(Img)`
   width: 100%;
   height: 50vh;
   z-index: 1;
 `
 
-export const StyledBackground = styled.span`
+export const Background = styled.span`
   width: 100%;
   height: 50vh;
   z-index: 1;
@@ -63,7 +57,7 @@ export const StyledBackground = styled.span`
   justify-content: center;
 `
 
-export const StyledIcon = styled(OctofaceIcon)`
+export const CatIcon = styled(OctofaceIcon)`
   height: auto;
   width: 70%;
   animation: ${moveBackground} 15s linear infinite;

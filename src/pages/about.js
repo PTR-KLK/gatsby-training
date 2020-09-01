@@ -1,11 +1,15 @@
 import React from "react"
-import Layout from "../components/layout.component"
-import { StyledHeading } from "../styles/about.style"
+import Layout from "../components/layout/layout.component"
 import { graphql } from "gatsby"
+import styled from "@emotion/styled"
+
+const Heading = styled.h1`
+  text-align: center;
+`
 
 export default function About({ data }) {
   const heroDescription = (
-    <StyledHeading>{`About ${data.site.siteMetadata.title}`}</StyledHeading>
+    <Heading>{`About ${data.site.siteMetadata.title}`}</Heading>
   )
 
   return (

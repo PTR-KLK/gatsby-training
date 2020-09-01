@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { PageLink } from "../styles/links.style"
-import { MenuIcon } from "../styles/icons.style"
 import {
-  StyledNav,
-  StyledPageLink,
-  StyledImg,
-  StyledButton,
-  StyledSection,
-} from "../styles/navbar.style"
+  Nav,
+  Hyperlink,
+  HomeHyperlink,
+  Picture,
+  Button,
+  Section,
+  Icon,
+} from "./navbar.style"
 
 export default function Navbar({ figureVisible }) {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -32,30 +32,30 @@ export default function Navbar({ figureVisible }) {
     `
   )
 
-  const MenuSection = () => {
+  const Menu = () => {
     return (
-      <StyledSection menuVisible={menuVisible}>
-        <PageLink to={`/`}>Blog</PageLink>{" "}
-        <PageLink to={`/portfolio/`}>Portfolio</PageLink>{" "}
-        <PageLink to={`/about/`}>About</PageLink>
-      </StyledSection>
+      <Section menuVisible={menuVisible}>
+        <Hyperlink to={`/`}>Blog</Hyperlink>{" "}
+        <Hyperlink to={`/portfolio/`}>Portfolio</Hyperlink>{" "}
+        <Hyperlink to={`/about/`}>About</Hyperlink>
+      </Section>
     )
   }
 
   return (
-    <StyledNav figureVisible={figureVisible}>
-      <StyledPageLink to={`/`}>
-        <StyledImg
+    <Nav figureVisible={figureVisible}>
+      <HomeHyperlink to={`/`}>
+        <Picture
           loading="eager"
           fluid={data.cat.childImageSharp.fluid}
           alt="Cat staring at you"
         />
         <h2>{data.site.siteMetadata.title}</h2>
-      </StyledPageLink>
-      <StyledButton onClick={() => setMenuVisible(!menuVisible)}>
-        <MenuIcon />
-      </StyledButton>
-      <MenuSection />
-    </StyledNav>
+      </HomeHyperlink>
+      <Button onClick={() => setMenuVisible(!menuVisible)}>
+        <Icon />
+      </Button>
+      <Menu />
+    </Nav>
   )
 }

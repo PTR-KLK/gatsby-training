@@ -1,13 +1,13 @@
 import styled from "@emotion/styled"
-import { rhythm } from "../utils/typography"
-import { colors } from "../utils/theme"
+import { rhythm } from "../../utils/typography"
+import { colors } from "../../utils/theme"
 
-export const StyledMain = styled.main`
+export const Main = styled.main`
   background: ${colors.light};
   color: ${colors.dark};
 `
 
-export const StyledArticle = styled.article`
+export const Article = styled.article`
   z-index: 3;
   min-height: 50vh;
   margin: 0 auto;

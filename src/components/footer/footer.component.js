@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledFooter, StyledSection } from "../styles/footer.style"
-import { ExternalLink } from "../styles/links.style"
+import { Container, Section, Hyperlink } from "./footer.style"
 
 export default function Footer() {
   const { site } = useStaticQuery(
@@ -20,18 +19,18 @@ export default function Footer() {
   )
 
   return (
-    <StyledFooter>
+    <Container>
       <span>
         Theme by{" "}
-        <ExternalLink
+        <Hyperlink
           href={site.siteMetadata.authorSite}
           target="_blank"
           rel="noopener noreferrer"
         >
           {site.siteMetadata.author}
-        </ExternalLink>{" "}
+        </Hyperlink>{" "}
         powered by{" "}
-        <ExternalLink
+        <Hyperlink
           href={"https://www.gatsbyjs.org/"}
           target="_blank"
           rel="noopener noreferrer"
@@ -40,28 +39,28 @@ export default function Footer() {
           <span role="img" aria-label="heart">
             ❤️
           </span>
-        </ExternalLink>
+        </Hyperlink>
       </span>
-      <StyledSection>
+      <Section>
         <span>
           Cat photo by{" "}
-          <ExternalLink
+          <Hyperlink
             href="https://unsplash.com/@madhatterzone?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
             target="_blank"
             rel="noopener noreferrer"
           >
             Manja Vitolic
-          </ExternalLink>{" "}
+          </Hyperlink>{" "}
           on{" "}
-          <ExternalLink
+          <Hyperlink
             href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
             target="_blank"
             rel="noopener noreferrer"
           >
             Unsplash
-          </ExternalLink>
+          </Hyperlink>
         </span>
-      </StyledSection>
-    </StyledFooter>
+      </Section>
+    </Container>
   )
 }

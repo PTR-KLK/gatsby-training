@@ -1,18 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { StyledHeader } from "../styles/blog-post.style"
-import Layout from "../components/layout.component"
-import SEO from "../components/seo.component"
+import { Header } from "./blog-post.style"
+import Layout from "../components/layout/layout.component"
+import SEO from "../components/seo/seo.component"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
   const heroDescription = (
-    <StyledHeader>
+    <Header>
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
       <p>{post.frontmatter.excerpt}</p>
-    </StyledHeader>
+    </Header>
   )
 
   return (
