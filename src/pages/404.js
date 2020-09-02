@@ -7,10 +7,10 @@ const Subheading = styled.h3`
 `
 
 export default function Home() {
-  const heroDescription = <h1>404</h1>
+  const heroContent = <h1>404</h1>
 
   return (
-    <Layout heroDescription={heroDescription}>
+    <Layout heroContent={heroContent}>
       <Subheading>Page not found.</Subheading>
     </Layout>
   )

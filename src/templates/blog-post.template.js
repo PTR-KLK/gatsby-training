@@ -7,7 +7,7 @@ import SEO from "../components/seo/seo.component"
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
-  const heroDescription = (
+  const heroContent = (
     <Header>
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
@@ -17,7 +17,7 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout
-      heroDescription={heroDescription}
+      heroContent={heroContent}
       heroImage={
         post.frontmatter.featuredImage
           ? post.frontmatter.featuredImage.childImageSharp.fluid

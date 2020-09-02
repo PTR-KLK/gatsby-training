@@ -1,5 +1,5 @@
 import React from "react"
-import { Header, Section, Picture, Background, CatIcon } from "./hero.style"
+import { Header, Section, Picture, Background } from "./hero.style"
 
 export default function Hero({ children, heroImage, onChangeVisibility }) {
   return (
@@ -13,9 +13,7 @@ export default function Hero({ children, heroImage, onChangeVisibility }) {
           alt="Grass"
         />
       ) : (
-        <Background>
-          <CatIcon />
-        </Background>
+        <Background />
       )}
     </Header>
   )

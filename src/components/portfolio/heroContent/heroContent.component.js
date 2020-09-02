@@ -4,9 +4,9 @@ import {
   Picture,
   InfoSection,
   Hyperlink,
-} from "./heroDescription.style"
+} from "./heroContent.style"
 
-export default function HeroDescription({ data }) {
+export default function heroContent({ data }) {
   const { url, avatarUrl, name, login, isHireable } = data
 
   return (

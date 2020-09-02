@@ -1,20 +1,8 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
-import { keyframes } from "@emotion/core"
 import { colors } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
 import { InView } from "react-intersection-observer"
-import { OctofaceIcon } from "@primer/octicons-react"
-
-const moveBackground = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`
 
 export const Header = styled(InView)`
   margin: 0;
@@ -24,6 +12,8 @@ export const Header = styled(InView)`
 `
 
 export const Section = styled.section`
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 800px;
   position: absolute;
@@ -31,6 +21,12 @@ export const Section = styled.section`
   z-index: 2;
   margin: 0 auto;
   padding: ${rhythm(1 / 2)} ${rhythm(0.75)};
+
+  h1, h2, h3, p {
+    background: rgba(0,0,0,0.6);
+    padding: 0 ${rhythm(1 / 4)};
+    margin: ${rhythm(1 / 8)} 0;
+  }
 
   & > * {
     margin: 0;
@@ -44,26 +40,14 @@ export const Section = styled.section`
 export const Picture = styled(Img)`
   width: 100%;
   height: 50vh;
-  z-index: 1;
 `
 
-export const Background = styled.span`
+export const Background = styled.section`
+  z-index: 1;
   width: 100%;
   height: 50vh;
-  z-index: 1;
   background: linear-gradient(-30deg, ${colors.secondary}, ${colors.primary});
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-export const CatIcon = styled(OctofaceIcon)`
-  height: auto;
-  width: 70%;
-  animation: ${moveBackground} 15s linear infinite;
-
-  @media (min-width: 425px) {
-    height: 70%;
-    width: auto;
-  }
 `

@@ -10,10 +10,10 @@ const Heading = styled.h1`
 
 export default function Home({ data }) {
   
-  const heroDescription = <Heading>Cat adventures</Heading>
+  const heroContent = <Heading>Cat adventures</Heading>
 
   return (
-    <Layout heroDescription={heroDescription}>
+    <Layout heroContent={heroContent}>
       {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
         <section key={node.id}>
           <BlogpostLink node={node} idx={idx} arr={arr} />

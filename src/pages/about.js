@@ -8,12 +8,12 @@ const Heading = styled.h1`
 `
 
 export default function About({ data }) {
-  const heroDescription = (
+  const heroContent = (
     <Heading>{`About ${data.site.siteMetadata.title}`}</Heading>
   )
 
   return (
-    <Layout heroDescription={heroDescription}>
+    <Layout heroContent={heroContent}>
       <p>
         Cat ipsum dolor sit amet, your pillow is now my pet bed for ooooh
         feather moving feather! inspect anything brought into the house for why

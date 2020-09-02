@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
 import Project from "../components/portfolio/project/project.component"
-import HeroDescription from "../components/portfolio/heroDescription/heroDescription.component"
+import HeroContent from "../components/portfolio/heroContent/heroContent.component"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -11,11 +11,11 @@ export default function Portfolio({ data }) {
   const List = styled.ul`
   list-style: none;
   margin: 0;
-`
+  `
 
   return (
     <Layout
-      heroDescription={<HeroDescription data={data.githubData.data.user} />}
+      heroContent={<HeroContent data={data.githubData.data.user} />}
     >
       <List>
         {repositories.edges
