@@ -9,13 +9,21 @@ export default function Portfolio({ data }) {
   const { login, repositories } = data.githubData.data.user
 
   const List = styled.ul`
-  list-style: none;
-  margin: 0;
+    list-style: none;
+    margin: 0;
   `
 
   return (
     <Layout
-      heroContent={<HeroContent data={data.githubData.data.user} />}
+      heroContent={
+        <HeroContent
+          data={data.githubData.data.user}
+          title={"PTR_KLK portfolio"}
+          description={
+            "Repositories of the recent projects found on Github and links to demo pages."
+          }
+        />
+      }
     >
       <List>
         {repositories.edges

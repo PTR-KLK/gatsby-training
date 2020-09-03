@@ -13,7 +13,13 @@ export default function About({ data }) {
   )
 
   return (
-    <Layout heroContent={heroContent}>
+    <Layout
+      heroContent={heroContent}
+      title={"Something about who really is PTR-KLK"}
+      description={
+        "Some information about me, what I was doing, what am I doing, and what I want to do."
+      }
+    >
       <p>
         Cat ipsum dolor sit amet, your pillow is now my pet bed for ooooh
         feather moving feather! inspect anything brought into the house for why

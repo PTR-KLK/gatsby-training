@@ -5,15 +5,18 @@ import styled from "@emotion/styled"
 import BlogpostLink from "../components/index/blogpostLink/blogpostLink.component"
 
 const Heading = styled.h1`
-    text-align: center;
-  `
+  text-align: center;
+`
 
 export default function Home({ data }) {
-  
   const heroContent = <Heading>Cat adventures</Heading>
 
   return (
-    <Layout heroContent={heroContent}>
+    <Layout
+      heroContent={heroContent}
+      title={"Main page of PTR-KLK personal website."}
+      description={"Recent news from my journey in the web development world."}
+    >
       {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
         <section key={node.id}>
           <BlogpostLink node={node} idx={idx} arr={arr} />

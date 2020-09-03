@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Header } from "./blog-post.style"
 import Layout from "../components/layout/layout.component"
-import SEO from "../components/seo/seo.component"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
@@ -23,11 +22,9 @@ export default function BlogPost({ data }) {
           ? post.frontmatter.featuredImage.childImageSharp.fluid
           : null
       }
+      title={post.frontmatter.title}
+      description={post.frontmatter.excerpt}
     >
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.excerpt}
-      />
       <div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
