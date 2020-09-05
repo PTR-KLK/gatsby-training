@@ -2,9 +2,11 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { colors } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
-import { InView } from "react-intersection-observer"
 
-export const Header = styled(InView)`
+export const Header = styled.header`
+  z-index: 1;
+  position: sticky;
+  top: 0;
   margin: 0;
   display: flex;
   align-items: center;
@@ -23,7 +25,7 @@ export const Section = styled.section`
   padding: ${rhythm(1 / 2)} ${rhythm(0.75)};
 
   h1, h2, h3, p {
-    background: rgba(0,0,0,0.6);
+    background: rgba(39, 39, 39, 0.6);
     padding: 0 ${rhythm(1 / 4)};
     margin: ${rhythm(1 / 8)} 0;
   }

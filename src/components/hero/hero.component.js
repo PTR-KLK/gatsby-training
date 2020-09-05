@@ -1,9 +1,9 @@
 import React from "react"
 import { Header, Section, Picture, Background } from "./hero.style"
 
-export default function Hero({ children, heroImage, onChangeVisibility }) {
+export default function Hero({ children, heroImage }) {
   return (
-    <Header as="header" onChange={onChangeVisibility} threshold={0.15}>
+    <Header>
       <Section>{children}</Section>
       {heroImage ? (
         <Picture

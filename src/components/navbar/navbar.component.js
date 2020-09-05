@@ -10,7 +10,7 @@ import {
   Icon,
 } from "./navbar.style"
 
-export default function Navbar({ figureVisible }) {
+export default function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false)
 
   const { ...data } = useStaticQuery(
@@ -43,7 +43,7 @@ export default function Navbar({ figureVisible }) {
   }
 
   return (
-    <Nav figureVisible={figureVisible}>
+    <Nav>
       <HomeHyperlink to={`/`}>
         <Picture
           loading="eager"

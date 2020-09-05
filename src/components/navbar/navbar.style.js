@@ -4,18 +4,10 @@ import {
   ThreeBarsIcon,
 } from "@primer/octicons-react"
 import { Link } from "gatsby"
-import { css, keyframes } from "@emotion/core"
+import { css } from "@emotion/core"
 import { colors } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
 
-const changeColor = keyframes`
-0%   {
-  background: none;
-}
-100% {
-  background: ${colors.dark};
-}
-`
 
 export const Nav = styled.nav`
   display: flex;
@@ -31,17 +23,7 @@ export const Nav = styled.nav`
   background: ${colors.dark};
 
   @media (min-width: 768px) {
-    position: fixed;
     padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
-    ${props =>
-      !props.figureVisible
-        ? css`
-            animation: ${changeColor} 250ms ease-out;
-            background: ${colors.dark};
-          `
-        : css`
-            background: rgba(0, 0, 0, 0.6);
-          `}
   }
 `
 
