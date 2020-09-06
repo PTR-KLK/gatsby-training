@@ -5,6 +5,7 @@ import styled from "@emotion/styled"
 
 const Heading = styled.h1`
   text-align: center;
+  align-self: center;
 `
 
 export default function About({ data }) {

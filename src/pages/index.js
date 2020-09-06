@@ -5,6 +5,7 @@ import styled from "@emotion/styled"
 import BlogpostLink from "../components/index/blogpostLink/blogpostLink.component"
 
 const Heading = styled.h1`
+  align-self: center;
   text-align: center;
 `
 

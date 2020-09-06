@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 
 const Subheading = styled.h3`
   text-align: center;
+  align-self: center;
 `
 
 export default function Home() {

@@ -2,6 +2,20 @@ import styled from "@emotion/styled"
 import { rhythm } from "../../../utils/typography"
 import { colors } from "../../../utils/theme"
 
+export const Hyperlink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  align-self: center;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: ${colors.accent};
+  }
+`
+
 export const BioSection = styled.section`
   display: flex;
   align-items: center;
@@ -43,18 +57,5 @@ export const InfoSection = styled.section`
 
   & > * {
     margin: 0;
-  }
-`
-
-export const Hyperlink = styled.a`
-  color: inherit;
-  text-decoration: none;
-
-  &:visited {
-    color: inherit;
-  }
-
-  &:hover {
-    color: ${colors.accent};
   }
 `
