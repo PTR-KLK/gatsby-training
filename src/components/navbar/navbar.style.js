@@ -5,7 +5,7 @@ import {
 } from "@primer/octicons-react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
-import { colors } from "../../utils/theme"
+import { colors, breakpoints } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
 
 
@@ -22,7 +22,7 @@ export const Nav = styled.nav`
   color: ${colors.light};
   background: ${colors.dark};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
   }
 `
@@ -56,7 +56,7 @@ export const HomeHyperlink = styled(Hyperlink)`
   & h2 {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       display: block;
       margin: 0;
       text-align: center;
@@ -70,7 +70,7 @@ export const Picture = styled(Img)`
   border-radius: 50%;
   margin: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     margin: 0 ${rhythm(0.25)} 0 0;
   }
 `
@@ -83,7 +83,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     display: none;
   }
 `
@@ -106,7 +106,7 @@ export const Section = styled.section`
           display: none;
         `}
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     display: block;
   }
 `
@@ -114,7 +114,7 @@ export const Icon = styled(ThreeBarsIcon)`
   width: ${rhythm(1)};
   height: ${rhythm(1)};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     & > * {
       display: none;
     }

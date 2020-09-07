@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { colors } from "../../../utils/theme"
+import { colors, breakpoints } from "../../../utils/theme"
 import { rhythm } from "../../../utils/typography"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
@@ -60,7 +60,7 @@ export const BackgroundImageSection = styled(BackgroundImage)`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     padding: ${rhythm(1)};
   }
 `
@@ -68,7 +68,7 @@ export const BackgroundImageSection = styled(BackgroundImage)`
 export const Section = styled.section`
   padding: 0 ${rhythm(1 / 2)};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     padding: 0 ${rhythm(1)};
   }
 `
@@ -77,7 +77,7 @@ export const Hr = styled.hr`
   border-bottom: 1px solid ${colors.dark};
   margin: ${rhythm(1 / 2)} 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     margin: ${rhythm(1)} 0;
   }
 `

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { rhythm } from "../../utils/typography"
-import { colors } from "../../utils/theme"
+import { colors,breakpoints } from "../../utils/theme"
 
 export const Container = styled.footer`
   align-self: flex-end;
@@ -12,7 +12,7 @@ export const Container = styled.footer`
   color: ${colors.light};
   background: linear-gradient(30deg, ${colors.secondary}, ${colors.primary});
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     justify-content: space-between;
     flex-flow: row;
   }
@@ -23,7 +23,7 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     align-items: flex-end;
   }
 `

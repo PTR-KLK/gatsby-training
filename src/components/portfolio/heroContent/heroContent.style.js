@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { rhythm } from "../../../utils/typography"
-import { colors } from "../../../utils/theme"
+import { colors, breakpoints } from "../../../utils/theme"
 
 export const Hyperlink = styled.a`
   color: inherit;
@@ -22,7 +22,7 @@ export const BioSection = styled.section`
   justify-content: center;
   flex-direction: column;
 
-  @media (min-width: 425px) {
+  @media (min-width: ${breakpoints.mobile}) {
     flex-direction: row;
   }
 `
@@ -33,17 +33,17 @@ export const Picture = styled.img`
   border-radius: 50%;
   margin: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     margin: 0 ${rhythm(1)} 0 0;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: ${breakpoints.laptop}) {
     width: ${rhythm(7.5)};
     height: ${rhythm(7.5)};
     margin: ${rhythm(1)};
   }
 
-  @media (min-width: 2560px) {
+  @media (min-width: ${breakpoints.bigScreen}) {
     width: ${rhythm(15)};
     height: ${rhythm(15)};
     margin: ${rhythm(2)};

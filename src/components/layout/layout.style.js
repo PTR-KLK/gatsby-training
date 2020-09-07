@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { rhythm } from "../../utils/typography"
-import { colors } from "../../utils/theme"
+import { colors, breakpoints, pageWidth } from "../../utils/theme"
 
 export const Main = styled.main`
   color: ${colors.dark};
@@ -20,10 +20,10 @@ export const Article = styled.article`
   width: 100%;
   height: 100%;
   min-height: calc(50vh - ${rhythm(2)});
-  max-width: 800px;
+  max-width: ${pageWidth};
   padding: ${rhythm(0.5)};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     padding: ${rhythm(1)};
   }
 `

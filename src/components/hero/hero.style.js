@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { colors } from "../../utils/theme"
-import { rhythm } from "../../utils/typography"
 
 export const Header = styled.header`
   z-index: 1;

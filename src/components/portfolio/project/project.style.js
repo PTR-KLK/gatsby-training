@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { rhythm } from "../../../utils/typography"
-import { colors } from "../../../utils/theme"
+import { colors, breakpoints } from "../../../utils/theme"
 import {
   MarkGithubIcon,
   TagIcon,
@@ -55,7 +55,7 @@ export const Li = styled.li`
       margin-bottom: 0;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       padding: ${rhythm(1)};
     }
   }
@@ -76,7 +76,7 @@ export const Hyperlink = styled.a`
     color: ${colors.accent};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     margin: 0;
   }
 `
@@ -85,7 +85,7 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     flex-direction: row;
   }
 
@@ -93,7 +93,7 @@ export const Footer = styled.footer`
     margin: 0 0 0 ${rhythm(1 / 4)};
     align-self: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       margin: 0 ${rhythm(1 / 2)} 0 ${rhythm(1 / 4)};
     }
   }
@@ -102,7 +102,7 @@ export const Footer = styled.footer`
     display: flex;
     margin: 0 0 ${rhythm(1 / 4)} 0;
 
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       margin: 0;
     }
   }
