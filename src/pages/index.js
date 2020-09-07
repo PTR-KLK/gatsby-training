@@ -18,10 +18,8 @@ export default function Home({ data }) {
       title={"Main page of PTR-KLK personal website."}
       description={"Recent news from my journey in the web development world."}
     >
-      {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
-        <section key={node.id}>
-          <BlogpostLink node={node} idx={idx} arr={arr} />
-        </section>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <BlogpostLink key={node.id} node={node} />
       ))}
     </Layout>
   )
@@ -39,7 +37,10 @@ export const query = graphql`
             excerpt
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 2560) {
+                fluid(
+                  maxWidth: 2560
+                  duotone: { highlight: "#F1E9DA", shadow: "#272727" }
+                ) {
                   ...GatsbyImageSharpFluid
                 }
               }
