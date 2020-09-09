@@ -38,9 +38,6 @@ export const Hyperlink = styled(Link)`
       color: ${colors.accent};
     }
 
-    div {
-      border: 1px solid ${colors.accent};
-    }
   }
 
   @media (min-width: ${breakpoints.tablet}) {
@@ -49,7 +46,6 @@ export const Hyperlink = styled(Link)`
 `
 
 export const Image = styled(Img)`
-  border: 1px solid ${colors.dark};
   margin-bottom: ${rhythm(1 / 4)};
   max-height: calc(${breakpoints.mobile} / 2);
 

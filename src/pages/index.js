@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
+import { colors } from "../utils/theme"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import BlogpostLink from "../components/index/blogpostLink/blogpostLink.component"
@@ -7,6 +8,11 @@ import BlogpostLink from "../components/index/blogpostLink/blogpostLink.componen
 const Heading = styled.h1`
   align-self: center;
   text-align: center;
+`
+
+const Hr = styled.hr`
+  margin: 0;
+  border-bottom: 1px solid ${colors.dark};
 `
 
 export default function Home({ data }) {
@@ -18,8 +24,11 @@ export default function Home({ data }) {
       title={"Main page of PTR-KLK personal website."}
       description={"Recent news from my journey in the web development world."}
     >
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogpostLink key={node.id} node={node} />
+      {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
+        <section key={node.id}>
+          <BlogpostLink node={node} />
+          {idx !== arr.length - 1 ? <Hr/> : null}
+        </section>
       ))}
     </Layout>
   )
