@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
 import Project from "../components/portfolio/project/project.component"
-import HeroContent from "../components/portfolio/heroContent/heroContent.component"
+import Header from "../components/portfolio/header/header.component"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -15,16 +15,12 @@ export default function Portfolio({ data }) {
 
   return (
     <Layout
-      heroContent={
-        <HeroContent
-          data={data.githubData.data.user}
-          title={"PTR_KLK portfolio"}
-          description={
-            "Repositories of the recent projects found on Github and links to demo pages."
-          }
-        />
+      title={"Portfolio"}
+      description={
+        "Repositories of the recent projects found on Github and links to demo pages."
       }
     >
+      <Header data={data} />
       <List>
         {repositories.edges
           .filter(e => e.node.name !== login)
@@ -42,6 +38,11 @@ export default function Portfolio({ data }) {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     githubData {
       data {
         user {

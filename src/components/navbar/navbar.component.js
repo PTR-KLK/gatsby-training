@@ -10,7 +10,7 @@ import {
   Icon,
 } from "./navbar.style"
 
-export default function Navbar() {
+export default function Navbar({ fixed }) {
   const [menuVisible, setMenuVisible] = useState(false)
 
   const { ...data } = useStaticQuery(
@@ -34,7 +34,7 @@ export default function Navbar() {
 
   const Menu = () => {
     return (
-      <Section menuVisible={menuVisible}>
+      <Section fixed={fixed} menuVisible={menuVisible}>
         <Hyperlink to={`/`}>Blog</Hyperlink>{" "}
         <Hyperlink to={`/portfolio/`}>Portfolio</Hyperlink>{" "}
         <Hyperlink to={`/about/`}>About</Hyperlink>
@@ -43,7 +43,7 @@ export default function Navbar() {
   }
 
   return (
-    <Nav>
+    <Nav fixed={fixed}>
       <HomeHyperlink to={`/`}>
         <Picture
           loading="eager"
@@ -52,7 +52,7 @@ export default function Navbar() {
         />
         <h2>{data.site.siteMetadata.title}</h2>
       </HomeHyperlink>
-      <Button onClick={() => setMenuVisible(!menuVisible)}>
+      <Button fixed={fixed} onClick={() => setMenuVisible(!menuVisible)}>
         <Icon />
       </Button>
       <Menu />

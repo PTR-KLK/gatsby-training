@@ -46,8 +46,7 @@ export const Li = styled.li`
     }
 
     & h3,
-    > p:first-of-type,
-    hr {
+    > p:first-of-type {
       margin-bottom: ${rhythm(1 / 4)};
     }
 
@@ -121,8 +120,12 @@ export const Circle = styled.span`
 `
 
 export const Hr = styled.hr`
+  margin: 0 ${rhythm(0.5)};
   border-bottom: 1px solid ${colors.dark};
-  margin: 0;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    margin: 0;
+  }
 `
 
 export const UpdatedIcon = styled(ClockIcon)`

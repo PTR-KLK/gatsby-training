@@ -2,6 +2,28 @@ import styled from "@emotion/styled"
 import { rhythm } from "../../../utils/typography"
 import { colors, breakpoints } from "../../../utils/theme"
 
+export const Heading = styled.h1`
+  padding: ${rhythm(0.25)} ${rhythm(0.5)} 0;
+  margin: 0;
+  align-self: center;
+  text-align: center;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    padding: ${rhythm(1)} ${rhythm(1)} 0;
+  }
+`
+
+export const Subheading = styled.h2`
+  padding: ${rhythm(0.5)} ${rhythm(0.5)} 0;
+  margin: 0;
+  align-self: center;
+  text-align: center;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`
+
 export const Hyperlink = styled.a`
   color: inherit;
   text-decoration: none;
@@ -17,6 +39,7 @@ export const Hyperlink = styled.a`
 `
 
 export const BioSection = styled.section`
+  padding: ${rhythm(0.5)};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,13 +48,17 @@ export const BioSection = styled.section`
   @media (min-width: ${breakpoints.mobile}) {
     flex-direction: row;
   }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    padding: ${rhythm(1)} ${rhythm(1)} 0;
+  }
 `
 
 export const Picture = styled.img`
   width: ${rhythm(5)};
   height: ${rhythm(5)};
   border-radius: 50%;
-  margin: 0;
+  margin: 0 0 ${rhythm(0.5)};
 
   @media (min-width: ${breakpoints.tablet}) {
     margin: 0 ${rhythm(1)} 0 0;
@@ -42,20 +69,18 @@ export const Picture = styled.img`
     height: ${rhythm(7.5)};
     margin: ${rhythm(1)};
   }
-
-  @media (min-width: ${breakpoints.bigScreen}) {
-    width: ${rhythm(15)};
-    height: ${rhythm(15)};
-    margin: ${rhythm(2)};
-  }
 `
 
 export const InfoSection = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 
   & > * {
     margin: 0;
+  }
+
+  @media (min-width: ${breakpoints.mobile}) {
+    align-items: flex-start;
   }
 `

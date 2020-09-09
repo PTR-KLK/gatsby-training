@@ -1,26 +1,31 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
-import {
-  ThreeBarsIcon,
-} from "@primer/octicons-react"
+import { ThreeBarsIcon } from "@primer/octicons-react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import { colors, breakpoints } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
 
-
 export const Nav = styled.nav`
+  ${props =>
+    props.fixed
+      ? css`
+          position: fixed;
+          z-index: 4;
+          top: 0;
+          color: ${colors.light};
+          background: ${colors.darkTransparent};
+        `
+      : css`
+          position: static;
+          color: ${colors.dark};
+        `};
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: space-between;
   width: 100%;
   padding: ${rhythm(0.125)} ${rhythm(0.5)} ${rhythm(0.125)};
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  color: ${colors.light};
-  background: ${colors.dark};
 
   @media (min-width: ${breakpoints.tablet}) {
     padding: ${rhythm(0.125)} ${rhythm(1)} ${rhythm(0.125)};
@@ -37,10 +42,6 @@ export const Hyperlink = styled(Link)`
 
   &:hover {
     color: ${colors.accent};
-
-    hr {
-      border-bottom: 1px solid ${colors.accent};
-    }
 
     h3,
     p {
@@ -79,7 +80,7 @@ export const Button = styled.button`
   background: none;
   border: none;
   padding: 0;
-  color: ${colors.light};
+  color: ${props => (props.fixed ? colors.light : colors.dark)};
   display: flex;
   align-items: center;
 
@@ -89,25 +90,40 @@ export const Button = styled.button`
 `
 
 export const Section = styled.section`
-  ${props =>
-    props.menuVisible
-      ? css`
-          display: flex;
-          flex-flow: column;
-          position: absolute;
-          text-align: center;
-          width: 100%;
-          top: ${rhythm(2)};
-          left: 0;
-          background: rgb(54, 52, 52, 0.8);
-          z-index: 4;
-        `
-      : css`
-          display: none;
-        `}
+  display: ${props => (props.menuVisible ? "flex" : "none")};
+  flex-flow: column;
+  position: absolute;
+  background: ${props => props.fixed ? colors.darkTransparent : colors.light};
+  top: ${rhythm(2)};
+  left: 0;
+  text-align: center;
+  z-index: 4;
+  width: 100%;
+
+  & > *:first-of-type {
+    border-top: 1px solid ${colors.accent};
+  }
+
+  & > * {
+    padding: ${rhythm(0.5)};
+    border-bottom: 1px solid ${colors.accent};
+  }
 
   @media (min-width: ${breakpoints.tablet}) {
-    display: block;
+    display: flex;
+    flex-flow: row;
+    position: static;
+    background: none;
+    width: auto;
+
+    & > *:first-of-type {
+      border-top: none;
+    }
+
+    & > * {
+      padding: 0 0 0 ${rhythm(0.25)};
+      border-bottom: none;
+    }
   }
 `
 export const Icon = styled(ThreeBarsIcon)`

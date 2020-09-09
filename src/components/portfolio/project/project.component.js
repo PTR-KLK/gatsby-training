@@ -16,7 +16,6 @@ export default function Project({ element, lastNode }) {
     <Li>
       <section>
         <h3>{element.node.name}</h3>
-        <Hr />
         {element.node.description ? <p>{element.node.description}</p> : null}
         {element.node.repositoryTopics.nodes.length > 0 ? (
           <ul>
@@ -64,7 +63,7 @@ export default function Project({ element, lastNode }) {
         </Footer>
       </section>
 
-      {lastNode ? null : <hr />}
+      {lastNode ? null : <Hr />}
     </Li>
   )
 }
