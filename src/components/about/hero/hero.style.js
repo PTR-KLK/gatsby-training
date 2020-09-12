@@ -1,11 +1,10 @@
 import styled from "@emotion/styled"
-import Img from "gatsby-image"
-import { colors } from "../../utils/theme"
+import { colors } from "../../../utils/theme"
 
 export const Header = styled.header`
+  color: ${colors.light};
   z-index: 1;
   position: sticky;
-  height: 50vh;
   top: 0;
   margin: 0;
   display: flex;
@@ -15,10 +14,9 @@ export const Header = styled.header`
 export const Section = styled.section`
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 100%;
   width: 100%;
   position: absolute;
-  color: ${colors.light};
   z-index: 2;
   margin: 0 auto;
   padding: 0;
@@ -26,16 +24,4 @@ export const Section = styled.section`
   & > * {
     margin: 0;
   }
-`
-
-export const Picture = styled(Img)`
-  width: 100%;
-  height: 100%;
-`
-
-export const Background = styled.section`
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-30deg, ${colors.secondary}, ${colors.primary});
 `

@@ -3,13 +3,13 @@ import { rhythm } from "../../../utils/typography"
 import { colors, breakpoints } from "../../../utils/theme"
 
 export const Heading = styled.h1`
-  padding: ${rhythm(0.25)} ${rhythm(0.5)} 0;
+  padding: ${rhythm(0.25)} ${rhythm(0.5)} ${rhythm(0.5)};
   margin: 0;
   align-self: center;
   text-align: center;
 
   @media (min-width: ${breakpoints.tablet}) {
-    padding: ${rhythm(1)} ${rhythm(1)} 0;
+    padding: ${rhythm(1)};
   }
 `
 
@@ -50,7 +50,7 @@ export const BioSection = styled.section`
   }
 
   @media (min-width: ${breakpoints.tablet}) {
-    padding: ${rhythm(1)} ${rhythm(1)} 0;
+    padding: ${rhythm(1)};
   }
 `
 
@@ -60,6 +60,10 @@ export const Picture = styled.img`
   border-radius: 50%;
   margin: 0 0 ${rhythm(0.5)};
 
+  @media (min-width: ${breakpoints.mobile}) {
+    margin: 0 ${rhythm(0.5)} 0 0;
+  }
+
   @media (min-width: ${breakpoints.tablet}) {
     margin: 0 ${rhythm(1)} 0 0;
   }
@@ -67,7 +71,6 @@ export const Picture = styled.img`
   @media (min-width: ${breakpoints.laptop}) {
     width: ${rhythm(7.5)};
     height: ${rhythm(7.5)};
-    margin: ${rhythm(1)};
   }
 `
 

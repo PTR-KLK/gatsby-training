@@ -1,3 +1,6 @@
+import styled from "@emotion/styled"
+import { rhythm } from "./typography"
+
 export const colors = {
   light: "#F1E9DA",
   dark: "#272727",
@@ -15,3 +18,12 @@ export const breakpoints = {
 }
 
 export const pageWidth = breakpoints.tablet
+
+export const Hr = styled.hr`
+  margin: 0 ${rhythm(0.5)};
+  border-bottom: 1px solid ${colors.dark};
+
+  @media (min-width: ${breakpoints.tablet}) {
+    margin: 0;
+  }
+`

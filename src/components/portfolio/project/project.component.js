@@ -4,12 +4,12 @@ import {
   Hyperlink,
   Footer,
   Circle,
-  Hr,
   TopicIcon,
   RepoIcon,
   DemoIcon,
   UpdatedIcon,
 } from "./project.style"
+import { Hr } from "../../../utils/theme"
 
 export default function Project({ element, lastNode }) {
   return (

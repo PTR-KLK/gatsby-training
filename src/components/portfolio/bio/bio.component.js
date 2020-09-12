@@ -1,20 +1,17 @@
 import React from "react"
 import {
-  Heading,
-  Subheading,
   BioSection,
   Picture,
   InfoSection,
   Hyperlink,
-} from "./header.style"
+} from "./bio.style"
+import { Hr } from "../../../utils/theme"
 
-export default function heroContent({ data }) {
+export default function Bio({ data }) {
   const { url, avatarUrl, name, login, isHireable } = data.githubData.data.user
 
   return (
     <>
-      <Subheading>{data.site.siteMetadata.title}</Subheading>
-      <Heading>Portfolio</Heading>
       <Hyperlink href={url} target="_blank" rel="noopener noreferrer">
         <BioSection>
           <Picture src={avatarUrl} alt="Just me" />
@@ -25,6 +22,7 @@ export default function heroContent({ data }) {
           </InfoSection>
         </BioSection>
       </Hyperlink>
+      <Hr />
     </>
   )
 }

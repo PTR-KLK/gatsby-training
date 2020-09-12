@@ -119,15 +119,6 @@ export const Circle = styled.span`
   background-color: ${props => props.color};
 `
 
-export const Hr = styled.hr`
-  margin: 0 ${rhythm(0.5)};
-  border-bottom: 1px solid ${colors.dark};
-
-  @media (min-width: ${breakpoints.tablet}) {
-    margin: 0;
-  }
-`
-
 export const UpdatedIcon = styled(ClockIcon)`
   margin: 0;
   align-self: center;

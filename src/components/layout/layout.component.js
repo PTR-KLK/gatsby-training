@@ -1,5 +1,6 @@
 import React from "react"
-import { Main, Article, Hr } from "./layout.style"
+import { Main, Article } from "./layout.style"
+
 import { Global, css } from "@emotion/core"
 import { colors } from "../../utils/theme"
 import Footer from "../footer/footer.component"
@@ -22,7 +23,6 @@ export default function Layout({ children, fixed, title, description }) {
           <SEO title={title} description={description} />
         ) : null}
         <Article>{children}</Article>
-        <Hr />
         <Footer />
       </Main>
     </>

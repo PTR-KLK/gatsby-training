@@ -1,28 +1,19 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
-import {
-  Heading,
-  Subheading,
-  Hr,
-  Hyperlink,
-} from "../components/index/index.style"
+import { Hyperlink } from "../components/index/index.style"
+import Header from "../components/header/header.component"
+import { Hr } from "../utils/theme"
 import { graphql } from "gatsby"
 import BlogpostLink from "../components/index/blogpostLink/blogpostLink.component"
 
 export default function Home({ data }) {
-  const Header = () => (
-    <>
-      <Subheading>{data.site.siteMetadata.title}</Subheading>
-      <Heading>Cat adventures</Heading>
-    </>
-  )
 
   return (
     <Layout
       title={"Main page"}
       description={"Recent news from my journey in the web development world."}
     >
-      <Header />
+      <Header title="Cat adventures" />
       {data.allMarkdownRemark.edges.map(({ node }, idx, arr) => (
         <Hyperlink key={node.id} to={node.fields.slug}>
           <BlogpostLink node={node} />

@@ -1,17 +1,22 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
+import { Hr } from "../utils/theme"
 import styled from "@emotion/styled"
+
+const Heading = styled.h2`
+  text-align: center;
+`
 
 const Subheading = styled.h3`
   text-align: center;
-  align-self: center;
 `
 
 export default function Home() {
-  const heroContent = <h1>404</h1>
 
   return (
-    <Layout heroContent={heroContent}>
+    <Layout>
+      <Heading>404</Heading>
+      <Hr />
       <Subheading>Page not found.</Subheading>
     </Layout>
   )

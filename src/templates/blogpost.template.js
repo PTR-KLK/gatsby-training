@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Header, Section } from "./blogpost.style"
-import Hero from "../components/hero/hero.component"
+import { Image, Header, Section} from "./blogpost.style"
+import { Hr } from "../utils/theme"
 import Layout from "../components/layout/layout.component"
 
 export default function BlogPost({ data }) {
@@ -9,24 +9,24 @@ export default function BlogPost({ data }) {
 
   return (
     <>
-      <Hero
-        heroImage={
-          post.frontmatter.featuredImage
-            ? post.frontmatter.featuredImage.childImageSharp.fluid
-            : null
-        }
+      <Layout
+        title={post.frontmatter.title}
+        description={post.frontmatter.excerpt}
       >
+        {post.frontmatter.featuredImage ? (
+          <Image
+            imgStyle={{ objectFit: "cover" }}
+            loading="eager"
+            fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+            alt="Grass"
+          />
+        ) : null}
         <Header>
           <h1>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
           <p>{post.frontmatter.excerpt}</p>
         </Header>
-      </Hero>
-      <Layout
-        title={post.frontmatter.title}
-        description={post.frontmatter.excerpt}
-        fixed
-      >
+        <Hr />  
         <Section dangerouslySetInnerHTML={{ __html: post.html }} />
       </Layout>
     </>
@@ -43,7 +43,10 @@ export const query = graphql`
         excerpt
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 2560) {
+            fluid(
+              maxWidth: 2560
+              duotone: { highlight: "#F1E9DA", shadow: "#272727" }
+              ) {
               ...GatsbyImageSharpFluid
             }
           }

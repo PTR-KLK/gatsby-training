@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
 import Project from "../components/portfolio/project/project.component"
-import Header from "../components/portfolio/header/header.component"
+import Bio from "../components/portfolio/bio/bio.component"
+import Header from "../components/header/header.component"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -20,7 +21,8 @@ export default function Portfolio({ data }) {
         "Repositories of the recent projects found on Github and links to demo pages."
       }
     >
-      <Header data={data} />
+      <Header title="Portfolio" />
+      <Bio data={data} />
       <List>
         {repositories.edges
           .filter(e => e.node.name !== login)

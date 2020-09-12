@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { ThreeBarsIcon } from "@primer/octicons-react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
-import { colors, breakpoints } from "../../utils/theme"
+import { colors, breakpoints, pageWidth } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
 
 export const Nav = styled.nav`
@@ -14,17 +14,24 @@ export const Nav = styled.nav`
           z-index: 4;
           top: 0;
           color: ${colors.light};
-          background: ${colors.darkTransparent};
+          background: none;
+          
+          @media (min-width: ${breakpoints.tablet}) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
         `
       : css`
           position: static;
           color: ${colors.dark};
+          margin: 0 auto;
         `};
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: space-between;
   width: 100%;
+  max-width: ${pageWidth};
   padding: ${rhythm(0.125)} ${rhythm(0.5)} ${rhythm(0.125)};
 
   @media (min-width: ${breakpoints.tablet}) {
