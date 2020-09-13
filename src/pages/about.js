@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/seo/seo.component"
 import Navbar from "../components/navbar/navbar.component"
 import Footer from "../components/footer/footer.component"
-import { Section1, Section2, Section3 } from "../components/about/about.style"
+import { Section1, Section2, Section3, Section4 } from "../components/about/about.style"
 import { Global, css } from "@emotion/core"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
@@ -18,7 +18,7 @@ export default function About({ data }) {
       <Global
         styles={css`
           html {
-            scroll-snap-type: y mandatory;
+            scroll-snap-type: y proximity;
           }
         `}
       />
@@ -35,9 +35,12 @@ export default function About({ data }) {
           <Heading>{`Check this out`}</Heading>
         </Section2>
         <Section3>
+          <Heading>{`You can also check this`}</Heading>
+        </Section3>
+        <Section4>
           <Heading>{`Contact me`}</Heading>
           <Footer absolute />
-        </Section3>
+        </Section4>
       </main>
     </>
   )
