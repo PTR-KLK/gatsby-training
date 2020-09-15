@@ -27,7 +27,7 @@ export const Section1 = styled(Header)`
     left: -50%;
     z-index: -1;
     background: linear-gradient(-30deg, ${colors.primary}, ${colors.secondary});
-    animation: ${rotate} 10s linear infinite;
+    animation: ${rotate} 5s linear infinite;
   }
 `
 
@@ -41,10 +41,11 @@ export const Section3 = styled(Header)`
   height: 50vh;
   background: ${colors.secondary};
   scroll-snap-align: start;
+  
 `
 
 export const Section4 = styled(Header)`
+  scroll-snap-align: start;
   height: 100vh;
   background: ${colors.primary};
-  scroll-snap-align: start;
 `

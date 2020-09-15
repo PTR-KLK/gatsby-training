@@ -18,7 +18,7 @@ export default function BlogPost({ data }) {
             imgStyle={{ objectFit: "cover" }}
             loading="eager"
             fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-            alt="Grass"
+            alt={post.frontmatter.title}
           />
         ) : null}
         <Header>
