@@ -2,12 +2,12 @@ import styled from "@emotion/styled"
 import { rhythm } from "./typography"
 
 export const colors = {
-  light: "#F1E9DA",
-  dark: "#272727",
+  light: "#F8F7FF",
+  dark: "#1E1E24",
   darkTransparent: "rgba(39, 39, 39, 0.7)",
-  primary: "#2B59C3",
-  secondary: "#BD4089",
-  accent: "#2CA58D",
+  primary: "#645DD7",
+  secondary: "#B37BA4",
+  accent: "#002699"
 }
 
 export const breakpoints = {

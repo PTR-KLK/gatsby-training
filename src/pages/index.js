@@ -43,7 +43,7 @@ export const query = graphql`
               childImageSharp {
                 fluid(
                   maxWidth: 2560
-                  duotone: { highlight: "#F1E9DA", shadow: "#272727" }
+                  duotone: { highlight: "#F8F7FF", shadow: "#1E1E24" }
                 ) {
                   ...GatsbyImageSharpFluid
                 }
