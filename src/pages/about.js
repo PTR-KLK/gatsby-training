@@ -3,7 +3,6 @@ import SEO from "../components/seo/seo.component"
 import Navbar from "../components/navbar/navbar.component"
 import Footer from "../components/footer/footer.component"
 import { Section1, Section2, Section3, Section4 } from "../components/about/about.style"
-import { Global, css } from "@emotion/core"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -15,13 +14,6 @@ const Heading = styled.h1`
 export default function About({ data }) {
   return (
     <>
-      <Global
-        styles={css`
-          html {
-            scroll-snap-type: y proximity;
-          }
-        `}
-      />
       <Navbar fixed />
       <SEO
         title="About"

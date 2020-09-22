@@ -35,16 +35,22 @@ export default function Navbar({ fixed }) {
   const Menu = () => {
     return (
       <Section fixed={fixed} menuVisible={menuVisible}>
-        <Hyperlink to={`/`}>Blog</Hyperlink>{" "}
-        <Hyperlink to={`/portfolio/`}>Portfolio</Hyperlink>{" "}
-        <Hyperlink to={`/about/`}>About</Hyperlink>
+        <Hyperlink fade duration={0.5} to={`/`}>
+          Blog
+        </Hyperlink>{" "}
+        <Hyperlink fade duration={0.5} to={`/portfolio/`}>
+          Portfolio
+        </Hyperlink>{" "}
+        <Hyperlink fade duration={0.5} to={`/about/`}>
+          About
+        </Hyperlink>
       </Section>
     )
   }
 
   return (
     <Nav fixed={fixed}>
-      <HomeHyperlink to={`/`}>
+      <HomeHyperlink fade duration={0.5} to={`/`}>
         <Picture
           loading="eager"
           fluid={data.cat.childImageSharp.fluid}

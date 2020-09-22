@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { ThreeBarsIcon } from "@primer/octicons-react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { css } from "@emotion/core"
 import { colors, breakpoints, pageWidth } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
@@ -39,7 +39,7 @@ export const Nav = styled.nav`
   }
 `
 
-export const Hyperlink = styled(Link)`
+export const Hyperlink = styled(AniLink)`
   color: inherit;
   text-decoration: none;
 
