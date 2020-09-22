@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { ThreeBarsIcon } from "@primer/octicons-react"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { css } from "@emotion/core"
 import { colors, breakpoints, pageWidth } from "../../utils/theme"
 import { rhythm } from "../../utils/typography"
@@ -15,7 +15,7 @@ export const Nav = styled.nav`
           top: 0;
           color: ${colors.light};
           background: none;
-          
+
           @media (min-width: ${breakpoints.tablet}) {
             left: 50%;
             transform: translateX(-50%);
@@ -100,7 +100,7 @@ export const Section = styled.section`
   display: ${props => (props.menuVisible ? "flex" : "none")};
   flex-flow: column;
   position: absolute;
-  background: ${props => props.fixed ? colors.darkTransparent : colors.light};
+  background: ${props => (props.fixed ? colors.darkTransparent : colors.light)};
   top: ${rhythm(2)};
   left: 0;
   text-align: center;

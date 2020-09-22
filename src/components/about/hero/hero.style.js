@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 import { colors } from "../../../utils/theme"
 
 export const Header = styled.header`
+  height: 100vh;
   color: ${colors.light};
   z-index: 1;
   position: sticky;

@@ -34,6 +34,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
